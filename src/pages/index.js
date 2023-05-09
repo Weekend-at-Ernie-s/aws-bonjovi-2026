@@ -20,7 +20,7 @@ export default function Homepage(props) {
       <Header />
         {days.map((day) => (
           <div key={day.id}>
-            {day.dayName}
+            <div className="text-3xl font-bold underline">{day.dayName}</div>
             {day.albums?.map((album) => (
               <div key={album.id}>
                 {album.albumName}
