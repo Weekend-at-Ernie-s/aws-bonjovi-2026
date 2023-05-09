@@ -1,6 +1,6 @@
 import * as React from "react"
 
-export default function Head({ title, description, image }) {
+export default function Head({ title = '', description = '', image = '' }) {
   return (
     <>
       <meta charSet="utf-8" />
