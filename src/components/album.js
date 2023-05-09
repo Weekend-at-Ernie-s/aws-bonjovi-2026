@@ -20,7 +20,7 @@ export default function Album(dayId, props) {
       </div>
   )
 }
-
+/*
 export const query = graphql(dayId)`
   {
     allContentfulAlbum(
@@ -32,7 +32,7 @@ export const query = graphql(dayId)`
     }
   }
 `
-
+*/
 // allContentfulAlbum {
 //   nodes {
 //     id
