@@ -9,6 +9,9 @@ on:
       - webhook
 jobs:
   deploy:
+    concurrency:
+      group: one-deploy-at-a-time-${{ github.workflow }}
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
