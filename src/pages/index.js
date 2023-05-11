@@ -1,6 +1,12 @@
-import React from "react"
+import React, { useRef, useState } from "react";
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Navigation, Thumbs } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 import Footer from "../components/footer"
 import SEOHead from "../components/head"
 import Header from "../components/header"
@@ -8,6 +14,8 @@ import Album from "../components/album"
 
 
 export default function Homepage(props) {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  console.log('thumbsSwiper', thumbsSwiper)
   const { allContentfulDay } = props.data
   // debugger;
   // const { edges: albums } = allContentfulAlbum;
@@ -20,15 +28,14 @@ export default function Homepage(props) {
       <Header />
         {days.map((day) => (
           <div key={day.id}>
-            {day.dayName}
+            <div className="text-3xl font-bold underline">{day.dayName}</div>
+
             {day.albums?.map((album) => (
               <div key={album.id}>
                 {album.albumName}
-                {album.photos?.map((photo) => (
-                  <div key={photo.id}>
-                    <GatsbyImage alt={photo.alt} image={getImage(photo.gatsbyImageData)} />
-                  </div>
-                ))}
+                <div className="" style={{ height: '400px'}}>
+                {album.photos && (<Album photos={album.photos} />)}
+                </div>
               </div>
             ))}
           </div>
