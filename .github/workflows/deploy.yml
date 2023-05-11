@@ -4,6 +4,9 @@ on:
     branches:
       - main    
       - github-s3-deploy #for testin'
+  repository_dispatch:
+    types:
+      - webhook
 jobs:
   deploy:
     runs-on: ubuntu-latest
