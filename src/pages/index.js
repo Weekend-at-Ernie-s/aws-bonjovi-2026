@@ -1,31 +1,61 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
 import Footer from "../components/footer"
 import SEOHead from "../components/head"
 import Header from "../components/header"
 import Album from "../components/album"
 
-
 export default function Homepage(props) {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  console.log('thumbsSwiper', thumbsSwiper)
-  const { allContentfulDay } = props.data
-  // debugger;
-  // const { edges: albums } = allContentfulAlbum;
+  const { allContentfulDay, allContentfulInfoBlock } = props.data
   const { nodes: days } = allContentfulDay;
-  // console.log('allContentfulAlbum', allContentfulAlbum)
-  console.log('allContentfulDay', allContentfulDay)
+  const { nodes: contents } = allContentfulInfoBlock
+
+  const aboveAlbumContents = contents.filter((c) => c.contentPlacement === 'above')
+  const belowAlbumContents = contents.filter((c) => c.contentPlacement === 'below')
+  console.log('contents', contents)
+  // debugger;
+
+  const renderContent = (content) => {
+
+
+    return (
+    <>
+      {content.map((item) => {
+        const lightTheme = item.backgroundColor === 'light';
+        return (
+        <div className={`flex flex-col items-center ${lightTheme ? 'bg-pueblo-25': 'bg-squid-ink'}`}>
+          <div className="flex flex-col items-center px-22 py-48 max-w-7xl">
+            <div className={`text-5xl pb-6 ${lightTheme ? 'text-squid-ink' : 'text-white'}`} >{item.heading.heading}</div>
+            <div className={`text-center text-base pb-6 ${lightTheme ? 'text-abajo' : 'text-pueblo'}`} >{item.description?.description}</div>
+
+            {item.photos && (
+              <div className="flex flex-row">
+                {item.photos.map((photo) => (
+                  <div className="w-1/3 mx-6">
+                    <GatsbyImage alt={photo.description || photo.filename || ''} image={getImage(photo.gatsbyImageData)} />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {item.video && (
+              <div>
+                  <video width="320" height="240" controls src={item.video.url}/>
+              </div>
+            )}
+          </div>
+        </div>
+      )})}
+    </>
+  )}
 
   return (
       <div>
-      <Header />
+        <Header />
+
+        {renderContent(aboveAlbumContents)}
+
         {days.map((day) => (
           <div key={day.id}>
             <div className="text-3xl font-bold underline">{day.dayName}</div>
@@ -34,13 +64,16 @@ export default function Homepage(props) {
               <div key={album.id}>
                 {album.albumName}
                 <div className="" style={{ height: '400px'}}>
-                {album.photos && (<Album photos={album.photos} />)}
+                  {album.photos && (<Album photos={album.photos} />)}
                 </div>
               </div>
             ))}
           </div>
         ))}
-      <Footer />
+
+        {renderContent(belowAlbumContents)}
+
+        <Footer />
       </div>
   )
 }
@@ -50,7 +83,7 @@ export const Head = (props) => {
 }
 export const query = graphql`
   {
-    allContentfulDay {
+    allContentfulDay(sort: {dayName: ASC}) {
       nodes {
         albums {
           id
@@ -59,35 +92,41 @@ export const query = graphql`
             albumDescription
           }
           photos {
-            id
+            description
+            filename
             gatsbyImageData
-            alt
+            id
           }
         }
         dayName
       }
     }
+
+    allContentfulInfoBlock {
+      nodes {
+        backgroundColor
+        contentPlacement
+        description {
+          description
+        }
+        heading {
+          heading
+        }
+        photos {
+          description
+          filename
+          gatsbyImageData
+          id
+        }
+        video {
+          description
+          filename
+          file {
+            url
+          }
+          url
+        }
+      }
+    }
   }
 `
-
-// allContentfulDay(sort: {dayName: ASC}) {
-//   nodes {
-//     id
-//     dayName
-//   }
-// }
-// allContentfulAlbum {
-//   edges {
-//     node {
-//       id
-//       albumName
-//       albumDescription {
-//         albumDescription
-//       }
-//       photos {
-//         id
-//         gatsbyImageData
-//       }
-//     }
-//   }
-// }
