@@ -25,7 +25,6 @@
     "gatsby": "^5.0.0",
     "gatsby-plugin-image": "^3.0.0",
     "gatsby-plugin-manifest": "^5.0.0",
-    "gatsby-plugin-open-graph-images": "^0.1.8",
     "gatsby-plugin-sharp": "^5.0.0",
     "gatsby-plugin-vanilla-extract": "^4.0.1",
     "gatsby-source-contentful": "^8.0.0",

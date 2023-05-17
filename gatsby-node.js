@@ -150,40 +150,4 @@ exports.createPages = ({ actions }) => {
     component: require.resolve("./src/components/footer.js"),
   })
 
-  const openGraphFacebookImage = createOpenGraphImage(createPage, {
-    path: "/og-image/facebook.jpg",
-    component: require.resolve(`./src/assets/open-graph-logo-1200x1200.jpg`),
-    size: {
-      width: 400,
-      height: 50,
-    },
-    waitCondition: "networkidle0",
-    context: {
-      description: "Blue AWS and Live Nation logos on beige background.",
-    },
-  });
-  const openGraphTwitterImage = createOpenGraphImage(createPage, {
-    path: "/og-image/twitter.jpg",
-    component: require.resolve(`./src/assets/twitter-card-logo-1024x512.jpg`),
-    size: {
-      width: 400,
-      height: 50,
-    },
-    waitCondition: "networkidle0",
-    context: {
-      description: "Blue AWS and Live Nation logos on beige background.",
-    },
-  });
-  const openGraphSafariImage = createOpenGraphImage(createPage, {
-    path: "/og-image/safari.svg",
-    component: require.resolve(`./src/assets/safari-pinned-tab.svg`),
-    size: {
-      width: 400,
-      height: 50,
-    },
-    waitCondition: "networkidle0",
-    context: {
-      description: "Blue AWS and Live Nation logos on beige background.",
-    },
-  });
 }
