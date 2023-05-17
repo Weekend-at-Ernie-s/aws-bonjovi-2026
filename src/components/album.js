@@ -21,9 +21,10 @@ export default function Album({photos}) {
     <>
       <Swiper
         style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
+          "--swiper-navigation-color": "rgba(35, 47, 62, 0.1)",
+          "--swiper-pagination-color": "rgba(35, 47, 62, 0.1)",
         }}
+        loop={true}
         spaceBetween={10}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
@@ -37,8 +38,13 @@ export default function Album({photos}) {
         ))}
       </Swiper>
       <Swiper
+        style={{
+          "--swiper-navigation-color": "rgba(35, 47, 62, 0.1)",
+          "--swiper-pagination-color": "rgba(35, 47, 62, 0.1)",
+        }}
+        loop={true}
         onSwiper={setThumbsSwiper}
-        spaceBetween={10}
+        spaceBetween={16}
         slidesPerView={8}
         freeMode={true}
         watchSlidesProgress={true}
@@ -46,7 +52,7 @@ export default function Album({photos}) {
         className="mySwiper"
       >
         {photos.map((photo) => (
-          <SwiperSlide>
+          <SwiperSlide style={{borderRadius: '8px'}}>
             <GatsbyImage alt={photo.alt} image={getImage(photo.gatsbyImageData)} />
           </SwiperSlide>
         ))}
