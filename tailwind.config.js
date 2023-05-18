@@ -16,9 +16,20 @@ module.exports = {
           // '144': '36rem',
         },
       height: {
+        '22': '5.5rem', // 88px
         '108': '27rem', // 432px
+        '148': '37rem', // 
         '168': '42rem', // 672px
+        '174': '43.5rem', // 696px
         '196': '49rem', // 784px
+      },
+        // max height 165 384 592 696
+      maxHeight: {
+        '148': '37rem', // 592px
+        '174': '43.5rem', // 696px
+      },
+      maxWidth: {
+        '8xl': '87rem', // 1392px
       }
     },
     colors: {
@@ -30,11 +41,14 @@ module.exports = {
       'abajo': '#4B5834',
       'vintage': '#494531',
       'white': '#FFFFFF',
+      'swiper-gray': '#232f3e1a',
+      'button-gray': '#232f3e33',
     },
     fontFamily: {
-      'body': ['Amazon Ember', 'Helvetica Neue', 'roboto', 'arial', 'sans-serif']
+      'body': 'Amazon Ember, Helvetica Neue, roboto, arial, sans-serif',
+      'display': 'Amazon Ember, Helvetica Neue, roboto, arial, sans-serif',
+      'sans': 'Amazon Ember, Helvetica Neue, roboto, arial, sans-serif',
     },
-    // 48 64 96 112
     fontSize: {
       'xs': '.75rem',
       'sm': '.875rem',

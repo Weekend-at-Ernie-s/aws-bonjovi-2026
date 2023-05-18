@@ -11,8 +11,8 @@ export default function Content({ content }) {
         const lightTheme = item.backgroundColor === 'light';
         return (
           <div className={`flex flex-col items-center ${lightTheme ? 'bg-center bg-cover': 'bg-squid-ink'}`} style={{ backgroundImage: lightTheme ? `url(${lightBackgroundImage})` : null }}>
-            <div className="flex flex-col items-center px-16 py-18 md:py-32 lg:py-40 xl:py-48 max-w-7xl">
-              <div className={`text-center text-3xl md:text-5xl lg:text-6xl pb-6 ${lightTheme ? 'text-squid-ink' : 'text-white'}`} >{item.heading.heading}</div>
+            <div className="flex flex-col items-center px-16 py-18 md:py-32 lg:py-40 xl:py-48 max-w-8xl">
+              <div className={`text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light ${lightTheme ? 'text-squid-ink' : 'text-white'}`} >{item.heading.heading}</div>
               <div className={`text-center text-base ${(item.photos || item.video) && 'pb-6'} ${lightTheme ? 'text-abajo' : 'text-pueblo'}`} >{item.description?.description}</div>
 
               {item.photos && (

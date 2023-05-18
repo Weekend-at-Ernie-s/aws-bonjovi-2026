@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Amazon Ember;
+    font-weight: 300;
+    src: url(/fonts/AmazonEmber_Lt.ttf) format("ttf");
+  }
+  @font-face {
+    font-family: Amazon Ember;
+    font-weight: 400;
+    src: url(/fonts/AmazonEmber_Rg.ttf) format("ttf");
+  }
+}

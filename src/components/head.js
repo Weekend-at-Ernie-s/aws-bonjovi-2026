@@ -18,8 +18,7 @@ export default function Head() {
       <meta property="og:type" content="website" />
       <meta property="og:title" content="AWS &#64; BottleRock Experience" />
       <meta property="og:description" content="Web page for the AWS &#64; BottleRock Experience." />
-      {/* TODO: change site url */}
-      <meta property="og:url" content="https://www.example.com" />
+      <meta property="og:url" content="https://www.awsbottlerock.com" />
       <meta property="og:image" content={facebookImage} />
       <meta property="og:image:alt" content="Blue AWS and Live Nation logos on beige background." />
 
