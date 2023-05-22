@@ -3,7 +3,7 @@ import liveNationLogo from '../assets/logo-live-nation.svg'
 
 export default function Footer() {
   return (
-    <div className="flex flex-col md:flex-row bg-vintage h-60 md:h-80 items-center justify-center md:justify-start px-6 py-12">
+    <div className="flex flex-col md:flex-row bg-vintage h-60 md:h-80 items-center justify-center md:justify-start px-6 py-12 text-sm md:text-base">
       <img className="h-8 md:h-12 pr-0 md:pr-12 mb-8 md:mb-0" src={liveNationLogo} alt="Live Nation logo" />
       <div className="flex flex-col text-stonehouse w-full text-center md:text-left md:max-w-2xl">
         <div className="pb-4">By continuing past this page, you agree to our <a className="underline" href="https://help.livenation.com/hc/en-us/articles/10468828916113-Terms-of-Use" target="_blank" rel="noreferrer">Terms of Use.</a></div>

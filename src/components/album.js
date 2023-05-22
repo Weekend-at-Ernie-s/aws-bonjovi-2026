@@ -11,20 +11,15 @@ import "swiper/css/thumbs";
 
 import "../styles/swiper.css";
 
-// import required modules
+// import required Swiper modules
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
 export default function Album({photos}) {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
 
-  // thumbnail slider height 32 64 88
   return (
     <div className="">
       <Swiper
-        style={{
-          "--swiper-navigation-color": "rgba(35, 47, 62, 0.1)",
-          "--swiper-pagination-color": "rgba(35, 47, 62, 0.1)",
-        }}
         loop={true}
         spaceBetween={10}
         navigation={true}
@@ -34,24 +29,20 @@ export default function Album({photos}) {
       >
         {photos.map((photo) => (
           <SwiperSlide className="">
-            <GatsbyImage className="h-full" imgStyle={{ borderRadius: '8px' }} objectFit="contain" alt={photo.description || photo.filename || ''} image={getImage(photo.gatsbyImageData)} />
+            <GatsbyImage className="h-full rounded-lg" imgStyle={{ borderRadius: '8px' }} objectFit="contain" alt={photo.description || photo.filename || ''} image={getImage(photo.gatsbyImageData)} />
           </SwiperSlide>
         ))}
       </Swiper>
       <Swiper
-        style={{
-          "--swiper-navigation-color": "rgba(35, 47, 62, 0.1)",
-          "--swiper-pagination-color": "rgba(35, 47, 62, 0.1)",
-        }}
         loop={true}
         onSwiper={setThumbsSwiper}
-        spaceBetween={16}
-        slidesPerView={photos.length < 9 ? photos.length : 9}
+        spaceBetween={12}
+        slidesPerView={7}
         navigation={true}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper h-8 md:h-16 lg:h-22 w-full"
+        className="mySwiper h-10 md:h-16 lg:h-22 w-full"
       >
         {photos.map((photo) => (
           <SwiperSlide className="" >

@@ -18,12 +18,18 @@ module.exports = {
       height: {
         '22': '5.5rem', // 88px
         '108': '27rem', // 432px
-        '148': '37rem', // 
+        '148': '37rem', // 592px
+        '166.5': '41.625rem', // 666px
         '168': '42rem', // 672px
         '174': '43.5rem', // 696px
         '196': '49rem', // 784px
       },
-        // max height 165 384 592 696
+      width: {
+        '85.25': '21.3125rem', // 341px
+        '192': '48rem', // 768px
+        '296': '74rem', // 1184px
+        '348': '87rem', // 1392px
+      },
       maxHeight: {
         '148': '37rem', // 592px
         '174': '43.5rem', // 696px
@@ -34,15 +40,18 @@ module.exports = {
     },
     colors: {
       'squid-ink': '#232F3E',
+      'squid-ink-50': 'rgba(35, 47, 62, 0.5)',
       'stonehouse': '#DACAA8',
       'pueblo': '#ECCD94',
       'pueblo-25': 'rgba(236, 205, 148, 0.25)',
       'springwood': '#B6BE5E',
+      'springwood-dark': '#888E47',
       'abajo': '#4B5834',
       'vintage': '#494531',
       'white': '#FFFFFF',
       'swiper-gray': '#232f3e1a',
       'button-gray': '#232f3e33',
+      'transparent': 'transparent',
     },
     fontFamily: {
       'body': 'Amazon Ember, Helvetica Neue, roboto, arial, sans-serif',
