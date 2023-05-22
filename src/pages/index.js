@@ -25,7 +25,7 @@ export default function Homepage(props) {
 
         <Content content={aboveAlbumContents} />
 
-        {days && (
+        {orderedDays.length ? (
           <div className="bg-swiper-gray flex flex-col items-center">
             <div className="text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-squid-ink pt-18 md:pt-32 lg:pt-40 xl:pt-48 leading-none" >Photo Gallery</div>
             <div className="flex flex-row flex-wrap justify-center items-center pb-6 md:pb-14">
@@ -67,7 +67,7 @@ export default function Homepage(props) {
               </div>
             ))}
           </div>
-        )}
+        ) : null}
 
         <Content content={belowAlbumContents} />
 
@@ -81,26 +81,6 @@ export const Head = (props) => {
 }
 export const query = graphql`
   {
-    allContentfulDay {
-      nodes {
-        albums {
-          id
-          albumName
-          albumDescription {
-            albumDescription
-          }
-          photos {
-            description
-            filename
-            gatsbyImageData
-            id
-          }
-        }
-        dayName
-        id
-      }
-    }
-
     allContentfulInfoBlock {
       nodes {
         backgroundColor
@@ -118,6 +98,25 @@ export const query = graphql`
           id
         }
         youTubeUrl
+      }
+    }
+    allContentfulDay {
+      nodes {
+        albums {
+          id
+          albumName
+          albumDescription {
+            albumDescription
+          }
+          photos {
+            description
+            filename
+            gatsbyImageData
+            id
+          }
+        }
+        dayName
+        id
       }
     }
   }

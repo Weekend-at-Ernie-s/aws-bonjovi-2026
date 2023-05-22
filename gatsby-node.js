@@ -1,29 +1,5 @@
-const { documentToHtmlString } = require("@contentful/rich-text-html-renderer")
-const { getGatsbyImageResolver } = require("gatsby-plugin-image/graphql-utils")
-const { createOpenGraphImage } = require("gatsby-plugin-open-graph-images")
-
-
 exports.createSchemaCustomization = async ({ actions }) => {
-  actions.createFieldExtension({
-    name: "blocktype",
-    extend(options) {
-      return {
-        resolve(source) {
-          return source.internal.type.replace("Contentful", "")
-        },
-      }
-    },
-  })
-
-  actions.createFieldExtension({
-    name: "imagePassthroughArgs",
-    extend(options) {
-      const { args } = getGatsbyImageResolver()
-      return {
-        args,
-      }
-    },
-  })
+  // actions.printTypeDefinitions({path: './typeDefs.txt'});
 
   actions.createFieldExtension({
     name: "imageUrl",
@@ -41,102 +17,50 @@ exports.createSchemaCustomization = async ({ actions }) => {
     },
   })
 
-  actions.createFieldExtension({
-    name: "richText",
-    extend(options) {
-      return {
-        resolve(source, args, context, info) {
-          const body = source.body
-          const doc = JSON.parse(body.raw)
-          const html = documentToHtmlString(doc)
-          return html
-        },
-      }
-    },
-  })
+  actions.createTypes(`
+    interface AlbumDescription {
+      albumDescription: String
+    }
+    interface Description {
+      description: String
+    }
+    interface Heading {
+      heading: String
+    }
+  `)
 
-  // abstract interfaces
-  // actions.createTypes(/* GraphQL */ `
-  //   interface AlbumDescription {
-  //     albumDescription: String
-  //   }
-  //
-  //   interface Album {
-  //     id: ID!
-  //     albumName: String
-  //     albumDescription: AlbumDescription
-  //     photos: [ContentfulAsset]
-  //   }
-  //
-  //   interface Day implements Node {
-  //     id: ID!
-  //     dayName: String
-  //     albums: [Album]
-  //   }
-  //
-  //   interface InfoBlockHeading {
-  //     contentHeading: String
-  //   }
-  //
-  //   interface InfoBlock {
-  //     id: ID!
-  //     backgroundColor: String
-  //     contentHeading: String
-  //     contentPlacement: String
-  //     description: String
-  //     heading: String
-  //     photos: [ContentfulAsset]
-  //     video: ContentfulAsset
-  //   }
-  // `)
+  actions.createTypes(`
+    type ContentfulAsset implements Node {
+      id: ID!
+      alt: String @proxy(from: "title")
+      gatsbyImageData: GatsbyImageData
+      url: String @imageUrl
+      file: JSON
+      title: String
+    }
 
-  // CMS-specific types for Homepage
-  // actions.createTypes(/* GraphQL */ `
-  //   type ContentfulDay implements Node & Day @dontInfer {
-  //     id: ID!
-  //     dayName: String
-  //     albums: [Album] @link(from: "albums___NODE")
-  //     blocktype: String @blocktype
-  //   }
-  //
-  //   type ContentfulAlbum implements Node & Album @dontInfer {
-  //     id: ID!
-  //     albumName: String
-  //     albumDescription: AlbumDescription
-  //     photos: [ContentfulAsset] @link(from: "photos___NODE")
-  //   }
-  //
-  //   type ContentfulInfoBlock implements InfoBlock @dontInfer {
-  //     id: ID!
-  //     backgroundColor: String
-  //     contentHeading: String
-  //     contentPlacement: String
-  //     description: String
-  //     heading: String
-  //     photos: [ContentfulAsset] @link(from: "photos___NODE")
-  //     video: ContentfulAsset @link(from: "video___NODE")
-  //   }
-  //
-  //   type ContentfulAsset implements Node {
-  //     id: ID!
-  //     alt: String @proxy(from: "title")
-  //     gatsbyImageData: GatsbyImageData
-  //     url: String @imageUrl
-  //     file: JSON
-  //     title: String
-  //   }
-  // `)
+    type ContentfulAlbum implements Node {
+      id: ID!
+      albumName: String
+      albumDescription: AlbumDescription
+      photos: [ContentfulAsset] @link(from: "photos___NODE")
+    }
 
-  // Page types
-  // actions.createTypes(/* GraphQL */ `
-  //   type ContentfulPage implements Node & Page {
-  //     id: ID!
-  //     slug: String!
-  //     title: String
-  //     description: String
-  //     html: String! @richText
-  //   }
-  // `)
+    type ContentfulDay implements Node {
+      id: ID!
+      dayName: String
+      albums: [ContentfulAlbum] @link(by: "id", from: "albums___NODE")
+    }
+
+    type ContentfulInfoBlock implements Node {
+      id: ID!
+      backgroundColor: String
+      contentPlacement: String
+      photos: [ContentfulAsset] @link(from: "photos___NODE")
+      youTubeUrl: String
+    }
+  `)
+
 }
 
 exports.createPages = ({ actions }) => {
