@@ -1,4 +1,5 @@
 import React from "react";
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -28,7 +29,7 @@ export default function Album({photos}) {
         className="mySwiper2 h-40 md:h-96 lg:h-148 xl:h-174 mb-2 md:mb-4 lg:mb-6 xl:mb-8"
       >
         {photos.map((photo) => (
-          <SwiperSlide className="">
+          <SwiperSlide className="" onClick={(e) => { e.preventDefault(); trackCustomEvent({ category: 'Album', action: 'Photo Click', label: `${photo.description || photo.filename || ''}` })}}>
             <GatsbyImage className="h-full rounded-lg" imgStyle={{ borderRadius: '8px' }} objectFit="contain" alt={photo.description || photo.filename || ''} image={getImage(photo.gatsbyImageData)} />
           </SwiperSlide>
         ))}
@@ -45,7 +46,7 @@ export default function Album({photos}) {
         className="mySwiper h-10 md:h-16 lg:h-22 w-full"
       >
         {photos.map((photo) => (
-          <SwiperSlide className="" >
+          <SwiperSlide className="" onClick={(e) => { e.preventDefault(); trackCustomEvent({ category: 'Album', action: 'Photo Click', label: `${photo.description || photo.filename || ''}` })}}>
             <GatsbyImage className="h-full rounded-lg" alt={photo.description || photo.filename || ''} image={getImage(photo.gatsbyImageData)} />
           </SwiperSlide>
         ))}
