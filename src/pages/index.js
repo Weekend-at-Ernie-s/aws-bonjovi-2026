@@ -32,7 +32,7 @@ export default function Homepage(props) {
               <div key={day.id} className={`${visibleDay === day.id ? 'block' : 'hidden'}`}>
                 <div className="flex flex-row flex-wrap justify-center">
                   {day.albums?.map((album, idx) => (
-                    <div className={`flex flex-row w-32 md:w-max items-center`} key={album.id}>
+                    <div className={`flex flex-row w-max items-center`} key={album.id}>
                       <button
                         key={album.id}
                         className={`font-bold pb-2 leading-none hover:text-springwood-dark border-transparent border-2 ${visibleAlbum === album.id ? 'text-springwood-dark border-b-springwood-dark' : 'text-vintage'}`}
