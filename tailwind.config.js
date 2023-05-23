@@ -36,7 +36,10 @@ module.exports = {
       },
       maxWidth: {
         '8xl': '87rem', // 1392px
-      }
+      },
+      right: {
+        '1/8': '12.5%',
+      },
     },
     colors: {
       'squid-ink': '#232F3E',
@@ -75,7 +78,7 @@ module.exports = {
     },
     screens: {
       'sm': '425px',
-      'md': '1024px',
+      'md': '650px',
       'lg': '1440px',
       'xl': '1920px',
       '2xl': '1536px',

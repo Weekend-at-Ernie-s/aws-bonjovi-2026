@@ -42,7 +42,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
     type ContentfulAlbum implements Node {
       id: ID!
       albumName: String
-      albumDescription: AlbumDescription
+      albumDescription: AlbumDescription @link(by: "id", from: "albumDescription___NODE")
       photos: [ContentfulAsset] @link(from: "photos___NODE")
     }
 
