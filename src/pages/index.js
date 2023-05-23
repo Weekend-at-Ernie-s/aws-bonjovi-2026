@@ -100,6 +100,7 @@ export const query = graphql`
           filename
           gatsbyImageData
           id
+          url
         }
       }
       dayName

@@ -12,8 +12,8 @@ export default function Footer() {
           <div className="w-full pb-4 md:pb-0">©2023 LIVE NATION WORLDWIDE, INC.</div>
           <div className="flex w-full justify-between">
             <OutboundLink href="https://help.livenation.com/hc/en-us/articles/10464047306641-Live-Nation-Entertainment-Privacy-Policy" target="_blank" rel="noreferrer">PRIVACY POLICY</OutboundLink>
-            <a href="https://help.livenation.com/hc/en-us/articles/9816003352593-AdChoices" target="_blank" rel="noreferrer">AD CHOICES</a>
-            <a href="https://www.livenation.com/canada-accessibility-for-ontarians-with-disabilities/" target="_blank" rel="noreferrer">AODA</a>
+            <OutboundLink href="https://help.livenation.com/hc/en-us/articles/9816003352593-AdChoices" target="_blank" rel="noreferrer">AD CHOICES</OutboundLink>
+            <OutboundLink href="https://www.livenation.com/canada-accessibility-for-ontarians-with-disabilities/" target="_blank" rel="noreferrer">AODA</OutboundLink>
           </div>
         </div>
       </div>
