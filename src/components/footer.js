@@ -1,5 +1,5 @@
 import React from "react"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 import liveNationLogo from '../assets/logo-live-nation.svg'
 
 export default function Footer() {
