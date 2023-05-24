@@ -21,6 +21,9 @@ export default function Album({photos}) {
 
   const downloadImage = (photo) => {
     saveAs(photo.url, photo.filename)
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'click', { event_category: 'download', event_label: photo.filename });
+    }
   }
 
   return (

@@ -45,10 +45,18 @@ module.exports = {
        trackingIds: [
          "G-JP1V5BJMK9", // Google Analytics / GA
        ],
-       // This object is used for configuration specific to this plugin
+       gtagConfig: {
+         // Anonymizes the last digits of the user’s IP.
+         // To comply with policies and legal regulations.
+         anonymize_ip: true,
+         cookie_expires: 0,
+       },
+       // This object is used for configuration specific to this plugin.
        pluginConfig: {
-         // Puts tracking script in the head instead of the body
-         head: true,
+         // As false it puts the tracking script in the body instead of the head.
+         head: false,
+         // Optional parameter to honor the Do Not Track feature.
+         respectDNT: true,
        },
      },
    },
