@@ -54,6 +54,7 @@ module.exports = {
       'white': '#FFFFFF',
       'swiper-gray': '#232f3e1a',
       'button-gray': '#232f3e33',
+      'photo-gray': '#00000040',
       'transparent': 'transparent',
     },
     fontFamily: {

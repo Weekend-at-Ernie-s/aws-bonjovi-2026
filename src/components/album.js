@@ -31,13 +31,13 @@ export default function Album({photos}) {
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2 h-40 md:h-96 lg:h-174 mb-2 md:mb-4 lg:mb-6 xl:mb-8"
-        style={{ paddingBottom: '28px' }}
+        className="mySwiper2 bg-photo-gray rounded-lg h-44 md:h-96 lg:h-148 xl:h-174"
+        style={{ marginBottom: '28px' }}
       >
         {photos.map((photo) => (
           <SwiperSlide key={photo.id} className="">
             <GatsbyImage className="h-full rounded-lg" imgStyle={{ borderRadius: '8px' }} objectFit="contain" alt={photo.description || photo.filename || ''} image={getImage(photo.gatsbyImageData)} />
-            <button onClick={() => {downloadImage(photo)}} className="absolute bottom-0 right-1/2 bg-white opacity-50 rounded-md p-1 z-50" style={{ marginBottom: '-32px' }}><img alt="download button" className="h-5 w-5 text-squid-ink-50 fill-current" src={downloadButton} /></button>
+            <button onClick={() => {downloadImage(photo)}} className="absolute top-3 right-3 md:top-7 md:right-11 bg-white opacity-50 rounded-md p-1 z-50"><img alt="download button" className="h-5 w-5 text-squid-ink-50 fill-current" src={downloadButton} /></button>
           </SwiperSlide>
         ))}
       </Swiper>
