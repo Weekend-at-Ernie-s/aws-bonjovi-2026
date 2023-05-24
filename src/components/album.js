@@ -19,6 +19,21 @@ import { FreeMode, Navigation, Thumbs } from "swiper";
 export default function Album({photos}) {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
 
+
+  const buttonClick = () => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'click', { event_category: 'album', event_label: 'photo view' });
+    }
+  }
+  React.useEffect(() => {
+    const prevButtons = document.querySelectorAll('.swiper-button-prev')
+    const nextButtons = document.querySelectorAll('.swiper-button-next')
+    const buttons = [...prevButtons, ...nextButtons]
+    buttons.forEach((el) => {
+      el.addEventListener('click', buttonClick);
+    })
+  }, [photos])
+
   const downloadImage = (photo) => {
     saveAs(photo.url, photo.filename)
     if (typeof window !== 'undefined' && window.gtag) {
