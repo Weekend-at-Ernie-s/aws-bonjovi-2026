@@ -30,21 +30,6 @@ export default function Homepage(props) {
             <div className="text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-squid-ink pt-6 md:pt-18 leading-none" >{orderedDays?.[0]?.dayName}</div>
             {orderedDays?.map((day) => (
               <div key={day.id} className={`${visibleDay === day.id ? 'block' : 'hidden'}`}>
-                <div className="flex flex-row flex-wrap justify-center">
-                  {day.albums?.map((album, idx) => (
-                    <div className={`flex flex-row w-max items-center`} key={album.id}>
-                      <button
-                        key={album.id}
-                        className={`font-bold pb-2 leading-none hover:text-springwood-dark border-transparent border-2 ${visibleAlbum === album.id ? 'text-springwood-dark border-b-springwood-dark' : 'text-vintage'}`}
-                        onClick={() => {setIsVisibleAlbum(album.id)}}
-                      >
-                        {album.albumName}
-                      </button>
-                      {day.albums?.length > 1 && idx !== day.albums?.length - 1 && (<div className="border-r-2 border-button-gray h-6 mr-3 pl-3 mb-2" />)}
-                    </div>
-                  ))}
-                </div>
-                <div className="border-b-2 border-button-gray w-full mb-6" />
                 {day.albums?.map((album) => (
                   <div key={album.id} className={`${visibleAlbum === album.id ? 'block' : 'hidden'} max-w-sm md:max-w-3xl lg:max-w-6xl xl:max-w-8xl m-auto pb-6 md:pb-18`}>
                     {album.albumDescription?.albumDescription && (<div className="text-abajo pb-12 leading-snug text-center">{album?.albumDescription?.albumDescription}</div>)}

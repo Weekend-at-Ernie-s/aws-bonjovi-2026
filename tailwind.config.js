@@ -23,6 +23,7 @@ module.exports = {
         '168': '42rem', // 672px
         '174': '43.5rem', // 696px
         '196': '49rem', // 784px
+        '270': '67.5rem', // 1080px
       },
       width: {
         '85.25': '21.3125rem', // 341px
@@ -42,15 +43,15 @@ module.exports = {
       },
     },
     colors: {
-      'squid-ink': '#232F3E',
-      'squid-ink-50': 'rgba(35, 47, 62, 0.5)',
+      'squid-ink': '#134641',
+      'squid-ink-50': 'rgba(35, 47, 62, 0.5)', // todo
       'stonehouse': '#DACAA8',
-      'pueblo': '#ECCD94',
-      'pueblo-25': 'rgba(236, 205, 148, 0.25)',
-      'springwood': '#B6BE5E',
-      'springwood-dark': '#888E47',
-      'abajo': '#4B5834',
-      'vintage': '#494531',
+      'pueblo': '#F4C48B',
+      'pueblo-25': 'rgba(236, 205, 148, 0.25)', // todo
+      'springwood': '#EDA042',
+      'springwood-dark': '#982f46',
+      'abajo': '#5E8A87',
+      'vintage': '#C13F41',
       'white': '#FFFFFF',
       'swiper-gray': '#232f3e1a',
       'button-gray': '#232f3e33',
