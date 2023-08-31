@@ -61,4 +61,5 @@ module.exports = {
      },
    },
   ],
+  pathPrefix: `/TheTown23`
 }

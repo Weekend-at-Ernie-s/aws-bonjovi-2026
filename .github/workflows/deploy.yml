@@ -33,6 +33,7 @@ jobs:
         env:
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          PREFIX_PATHS: 'true'
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
