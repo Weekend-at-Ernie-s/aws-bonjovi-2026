@@ -3,7 +3,9 @@ require("dotenv").config()
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-
+console.log("__JACOB DEBUG__");
+console.log("process.env.SITE_SUBDIR: " + process.env.SITE_SUBDIR);
+console.log("process.env: " + JSON.stringify(process.env));
 module.exports = {
   siteMetadata: {
     siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
