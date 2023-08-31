@@ -61,6 +61,6 @@ module.exports = {
      },
    },
   ],
-  pathPrefix: '/TheTown23',
-  assetPrefix: '/TheTown23'
+  pathPrefix: '/' + process.env.SITE_SUBDIR,
+  // assetPrefix: '/' + process.env.SITE_SUBDIR
 }
