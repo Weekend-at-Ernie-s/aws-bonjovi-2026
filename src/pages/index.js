@@ -7,13 +7,13 @@ import SEOHead from "../components/head"
 import Header from "../components/header"
 
 export default function Homepage(props) {
-  const { allContentfulGalleries, allContentfulInfoBlock } = props.data
-  const { nodes: galleries } = allContentfulGalleries;
-  const { nodes: contents } = allContentfulInfoBlock
+  const { allContentfulEvent: { nodes: events } } = props.data
+  let galleries = []
+  let contents = []
+  events[0].content.map((c) => c.albums ? galleries.push(c) : contents.push(c))
 
-  const orderedGalleries = galleries.sort((a, b) => a?.galleryName.localeCompare(b?.galleryName))
+  const orderedGalleries = galleries?.sort((a, b) => a?.galleryName.localeCompare(b?.galleryName))
 
-  const [visibleDay, setIsVisibleDay] = React.useState(orderedGalleries?.[0]?.id)
   const [visibleAlbum, setIsVisibleAlbum] = React.useState(orderedGalleries?.[0]?.albums?.[0]?.id)
   const hasOneAlbum = orderedGalleries?.[0]?.albums?.length === 1;
 
@@ -30,7 +30,7 @@ export default function Homepage(props) {
           <div className="bg-swiper-gray flex flex-col items-center">
             <div className="text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-squid-ink pt-6 md:pt-18 leading-none" >{orderedGalleries?.[0]?.galleryName}</div>
             {orderedGalleries?.map((day) => (
-              <div key={day.id} className={`${visibleDay === day.id ? 'block' : 'hidden'}`}>
+              <div key={day.id} className='block'>
               {!hasOneAlbum && (
                 <>
                   <div className="flex flex-row flex-wrap justify-center">
@@ -74,44 +74,49 @@ export const Head = (props) => {
 }
 export const query = graphql`
   {
-    allContentfulInfoBlock {
+    allContentfulEvent(filter: {contentful_id: {eq: "6b0uZDsjzX4Rpq1ZTGCtIu"}}) {
       nodes {
-        backgroundColor
-        contentPlacement
-        description {
-          description
+        contentful_id
+        eventName
+        content {
+          ... on ContentfulGalleries {
+            id
+            galleryName
+            albums {
+              id
+              albumName
+              albumDescription {
+                albumDescription
+              }
+              photos {
+                description
+                filename
+                gatsbyImageData
+                id
+                url
+              }
+            }
+          }
+          ... on ContentfulInfoBlock {
+            id
+            backgroundColor
+            contentPlacement
+            description {
+              description
+            }
+            heading {
+              heading
+            }
+            photos {
+              description
+              filename
+              gatsbyImageData
+              id
+            }
+            youTubeUrl
+          }
         }
-        heading {
-          heading
-        }
-        photos {
-          description
-          filename
-          gatsbyImageData
-          id
-        }
-        youTubeUrl
       }
     }
-    allContentfulGalleries {
-      nodes {
-        albums {
-          id
-          albumName
-          albumDescription {
-            albumDescription
-          }
-          photos {
-            description
-            filename
-            gatsbyImageData
-            id
-            url
-          }
-        }
-      galleryName
-      id
-    }
-  }
 }
 `
