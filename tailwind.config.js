@@ -23,6 +23,7 @@ module.exports = {
         '168': '42rem', // 672px
         '174': '43.5rem', // 696px
         '196': '49rem', // 784px
+        '225': '56.25rem', // 900px
         '270': '67.5rem', // 1080px
       },
       width: {
@@ -43,7 +44,7 @@ module.exports = {
       },
     },
     colors: {
-      'squid-ink': '#134641',
+      'squid-ink': '#273A38',
       'squid-ink-50': 'rgba(35, 47, 62, 0.5)', // todo
       'stonehouse': '#DACAA8',
       'pueblo': '#F4C48B',
@@ -51,7 +52,7 @@ module.exports = {
       'springwood': '#EDA042',
       'springwood-dark': '#982f46',
       'abajo': '#5E8A87',
-      'vintage': '#C13F41',
+      'vintage': '#912F31',
       'white': '#FFFFFF',
       'swiper-gray': '#232f3e1a',
       'button-gray': '#232f3e33',

@@ -7,9 +7,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
-    title: "Gatsby Contentful Homepage Starter",
-    author: `Gatsby`,
-    description: "A Gatsby Starter for building homepages with Contentful",
+    title: "AWS &#64; The Town Experience",
+    author: `lbkinson`,
+    description: "Web page for the AWS &#64; The Town Experience.",
   },
   plugins: [
     {

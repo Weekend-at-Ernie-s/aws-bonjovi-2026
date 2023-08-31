@@ -1,2 +1,2 @@
-AWS @ BottleRock Experience
+AWS @ The Town
 @lbkinson

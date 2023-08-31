@@ -18,7 +18,7 @@ export default function Head() {
       <meta property="og:type" content="website" />
       <meta property="og:title" content="AWS &#64; The Town Experience." />
       <meta property="og:description" content="Web page for the AWS &#64; The Town Experience.." />
-      <meta property="og:url" content="https://www.awsthetown.com" />
+      <meta property="og:url" content="https://www.awsrockshere.com/the-town" />
       <meta property="og:image" content={facebookImage} />
       <meta property="og:image:alt" content="Black AWS logo on pink background with ferris wheel and cityscape imagery below." />
 
