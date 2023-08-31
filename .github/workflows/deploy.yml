@@ -43,7 +43,7 @@ jobs:
         uses: jonelantha/gatsby-s3-action@v1
         with:
           dest-s3-bucket: aws-rocks-here
-          dest-s3-path: the-town-2023
-          # cloudfront-id-to-invalidate: E28BDSFTE0NLBU
-          # cloudfront-path-to-invalidate: /the-town-2023/*
+          dest-s3-path: TheTown23
+          cloudfront-id-to-invalidate: EOCR8YF4IQ3PZ
+          cloudfront-path-to-invalidate: /EOCR8YF4IQ3PZ/
 
