@@ -57,6 +57,7 @@ module.exports = {
       'swiper-gray': '#232f3e1a',
       'button-gray': '#232f3e33',
       'photo-gray': '#00000040',
+      'antique-white': '#FAE9D5',
       'transparent': 'transparent',
     },
     fontFamily: {
@@ -79,6 +80,12 @@ module.exports = {
       '8xl': '6rem', // 96px
       '9xl': '7rem' // 112px
     },
+    backgroundSize:{
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+      'static-wide': '1800px',
+    }, 
     screens: {
       'sm': '425px',
       'md': '650px',
