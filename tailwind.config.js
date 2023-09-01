@@ -42,6 +42,12 @@ module.exports = {
       right: {
         '1/8': '12.5%',
       },
+      backgroundSize:{
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        'static-wide': '1800px',
+      }, 
     },
     colors: {
       'squid-ink': '#273A38',
@@ -80,12 +86,6 @@ module.exports = {
       '8xl': '6rem', // 96px
       '9xl': '7rem' // 112px
     },
-    backgroundSize:{
-      'auto': 'auto',
-      'cover': 'cover',
-      'contain': 'contain',
-      'static-wide': '1800px',
-    }, 
     screens: {
       'sm': '425px',
       'md': '650px',
