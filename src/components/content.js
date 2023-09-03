@@ -24,10 +24,10 @@ export default function Content({ content }) {
                   ))}
                 </div>
               )}
-{/* md:w-192 md:h-108 */}
+
               {item.youTubeUrl && (
                 <iframe
-                  className="w-full h-[12rem] md:h-[27rem] md:max-w-192 lg:w-296 lg:h-166.5 xl:w-348 xl:h-196 rounded-xl"
+                  className="w-full aspect-video md:max-w-192 lg:w-296 lg:h-166.5 xl:w-348 xl:h-196 rounded-xl"
                   src={item?.youTubeUrl}
                   title="YouTube video player"
                   frameborder="0"
