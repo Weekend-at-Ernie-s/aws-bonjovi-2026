@@ -11,7 +11,7 @@ export default function Content({ content }) {
         const lightTheme = item.backgroundColor === 'light';
         return (
           <div key={item.id} className={`flex flex-col items-center ${lightTheme ? 'bg-center bg-cover': 'bg-squid-ink'}`} style={{ backgroundImage: lightTheme ? `url(${lightBackgroundImage})` : null }}>
-            <div className="flex flex-col items-center px-6 py-8 md:py-18 max-w-8xl">
+            <div className="flex flex-col items-center px-6 py-8 md:py-18 max-w-8xl w-5/6">
               <div className={`leading-none text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light ${lightTheme ? 'text-squid-ink' : 'text-white'}`} >{item.heading?.heading}</div>
               <div className={`leading-snug text-center text-base ${(item.photos || item.youTubeUrl) && 'pb-6'} ${lightTheme ? 'text-vintage' : 'text-stonehouse'}`} >{item.description?.description}</div>
 
@@ -24,10 +24,10 @@ export default function Content({ content }) {
                   ))}
                 </div>
               )}
-
+{/* md:w-192 md:h-108 */}
               {item.youTubeUrl && (
                 <iframe
-                  className="w-full h-[12rem] md:w-192 md:h-108 lg:w-296 lg:h-166.5 xl:w-348 xl:h-196 rounded-xl"
+                  className="w-full h-[12rem] md:h-[27rem] md:max-w-192 lg:w-296 lg:h-166.5 xl:w-348 xl:h-196 rounded-xl"
                   src={item?.youTubeUrl}
                   title="YouTube video player"
                   frameborder="0"
