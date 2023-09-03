@@ -27,7 +27,7 @@ export default function Content({ content }) {
 
               {item.youTubeUrl && (
                 <iframe
-                  className="w-85.25 h-48 md:w-192 md:h-108 lg:w-296 lg:h-166.5 xl:w-348 xl:h-196 rounded-xl"
+                  className="w-full h-[12rem] md:w-192 md:h-108 lg:w-296 lg:h-166.5 xl:w-348 xl:h-196 rounded-xl"
                   src={item?.youTubeUrl}
                   title="YouTube video player"
                   frameborder="0"

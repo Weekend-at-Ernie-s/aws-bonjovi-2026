@@ -27,10 +27,10 @@ export default function Homepage(props) {
         <Content content={aboveAlbumContents} />
 
         {orderedGalleries.length ? (
-          <div className="bg-swiper-gray flex flex-col items-center">
+          <div className="bg-swiper-gray flex flex-col items-center xs:w-screen">
             <div className="text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-squid-ink pt-6 md:pt-18 leading-none" >{orderedGalleries?.[0]?.galleryName}</div>
             {orderedGalleries?.map((day) => (
-              <div key={day.id} className='block'>
+              <div key={day.id} className='block w-full'>
               {!hasOneAlbum && (
                 <>
                   <div className="flex flex-row flex-wrap justify-center">
