@@ -1,5 +1,6 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { ImgixGatsbyImage, getGatsbyImageData } from '@imgix/gatsby';
 import { saveAs } from 'file-saver'
 import downloadButton from '../assets/download-button.svg'
 // Import Swiper React components
@@ -18,6 +19,15 @@ import { FreeMode, Navigation, Thumbs } from "swiper";
 
 export default function Album({photos}) {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
+  console.log("photos");
+  console.log(photos);
+
+  const imgixUrl = (photo) => {
+    var url = photo.url;// + "?fit=fillmax&fill=blur&w=1400&h=700&auto=compress,format";
+    url = url.replace("images.ctfassets.net", "awsimages.imgix.net");
+    url = url.replace("downloads.ctfassets.net", "awsimages.imgix.net")
+    return url;
+  }
 
 
   const photoView = () => {
@@ -47,7 +57,25 @@ export default function Album({photos}) {
       >
         {photos.map((photo) => (
           <SwiperSlide key={photo.id} className="">
-            <GatsbyImage className="h-full rounded-lg" imgStyle={{ borderRadius: '8px' }} objectFit="contain" alt={photo.description || photo.filename || ''} image={getImage(photo.gatsbyImageData)} />
+            <GatsbyImage 
+              className="h-full rounded-lg" 
+              imgStyle={{ borderRadius: '8px' }} 
+              objectFit="contain" 
+              alt={photo.description || photo.filename || ''} 
+              image={getGatsbyImageData({
+                src: imgixUrl(photo),
+                imgixParams: {
+                  fit: "fillmax",
+                  fill: "blur",
+                  w: 1400,
+                  h: 700,
+                  auto: 'compress,format'
+                },
+                layout: 'constrained',
+                width:photo.file.details.image.width,
+                height:photo.file.details.image.height,
+              })}
+            />
             <button onClick={() => {downloadImage(photo)}} className="absolute top-3 right-3 md:top-7 md:right-11 bg-white opacity-50 rounded-md p-1 z-50"><img alt="download button" className="h-5 w-5 text-squid-ink-50 fill-current" src={downloadButton} /></button>
           </SwiperSlide>
         ))}
