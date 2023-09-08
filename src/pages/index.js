@@ -91,7 +91,17 @@ export const query = graphql`
               photos {
                 description
                 filename
-                file
+                file {
+                  url
+                  details {
+                    size
+                    image {
+                      width
+                      height
+                    }
+                  }
+                  fileName
+                }
                 gatsbyImageData
                 imgixImage {
                   gatsbyImageData(width: 1400, imgixParams: {
