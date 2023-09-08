@@ -1,5 +1,6 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { ImgixGatsbyImage, getGatsbyImageData } from '@imgix/gatsby';
 import { saveAs } from 'file-saver'
 import downloadButton from '../assets/download-button.svg'
 // Import Swiper React components
@@ -18,6 +19,15 @@ import { FreeMode, Navigation, Thumbs } from "swiper";
 
 export default function Album({photos}) {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
+  console.log("photos");
+  console.log(photos);
+
+  const imgixUrl = (photo) => {
+    var url = photo.url;
+    url = url.replace("images.ctfassets.net", "awsimages.imgix.net");
+    url = url.replace("downloads.ctfassets.net", "awsimages.imgix.net")
+    return url;
+  }
 
 
   const photoView = () => {
@@ -47,7 +57,26 @@ export default function Album({photos}) {
       >
         {photos.map((photo) => (
           <SwiperSlide key={photo.id} className="">
-            <GatsbyImage className="h-full rounded-lg" imgStyle={{ borderRadius: '8px' }} objectFit="contain" alt={photo.description || photo.filename || ''} image={getImage(photo.gatsbyImageData)} />
+            <GatsbyImage 
+              className="h-full rounded-lg" 
+              imgStyle={{ borderRadius: '8px' }} 
+              objectFit="cover" 
+              alt={photo.description || photo.filename || ''} 
+              loading="eager"
+              image={getGatsbyImageData({
+                src: imgixUrl(photo),
+                imgixParams: {
+                  auto: 'compress,format',
+                  fit: "fillmax",
+                 fill: "blur",
+                },
+                layout: 'constrained',
+                width:1400, //fill out the whole slider in the aspect ratio that it is on smaller screens
+                height:642,
+                outputPixelDensities: [1],
+                breakpoints: [750, 1080, 1200]
+              })}
+            />
             <button onClick={() => {downloadImage(photo)}} className="absolute top-3 right-3 md:top-7 md:right-11 bg-white opacity-50 rounded-md p-1 z-50"><img alt="download button" className="h-5 w-5 text-squid-ink-50 fill-current" src={downloadButton} /></button>
           </SwiperSlide>
         ))}
@@ -65,7 +94,17 @@ export default function Album({photos}) {
       >
         {photos.map((photo) => (
           <SwiperSlide className="">
-            <GatsbyImage className="h-full rounded-lg" alt={photo.description || photo.filename || ''} image={getImage(photo.gatsbyImageData)} />
+            <GatsbyImage className="h-full rounded-lg" alt={photo.description || photo.filename || ''} loading="eager" image={getGatsbyImageData({
+                src: imgixUrl(photo),
+                imgixParams: {
+                  auto: 'compress,format'
+                },
+                layout: 'constrained',
+                width:120,//photo.file.details.image.width,
+                height:(120/photo.file.details.image.width) * photo.file.details.image.height, //hack to trick gatsby into not loading giant images,
+                outputPixelDensities: [1],
+                breakpoints: [50, 100]
+              })} />
           </SwiperSlide>
         ))}
       </Swiper>

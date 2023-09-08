@@ -91,6 +91,7 @@ export const query = graphql`
               photos {
                 description
                 filename
+                file
                 gatsbyImageData
                 id
                 url
