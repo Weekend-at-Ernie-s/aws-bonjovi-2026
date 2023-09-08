@@ -30,7 +30,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
   `)
 
   actions.createTypes(`
-
+    type ContentfulAsset implements Node {
+      id: ID!
+      alt: String @proxy(from: "title")
+      gatsbyImageData: GatsbyImageData
+      url: String @imageUrl
+      file: JSON
+      title: String
+    }
 
     type ContentfulAlbum implements Node {
       id: ID!

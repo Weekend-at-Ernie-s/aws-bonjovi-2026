@@ -26,33 +26,6 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
     "gatsby-transformer-sharp",
-    {
-      resolve: `@imgix/gatsby`,
-      options: {
-        // This is the domain of your imgix source, which can be created at
-        // https://dashboard.imgix.com/.
-        // Required for "Web Proxy" imgix sources.
-        domain: 'awsimages.imgix.net',
-
-        // This configures the plugin to work in proxy mode.
-        // Can be AmazonS3, GoogleCloudStorage, MicrosoftAzure, or WebFolder.
-        sourceType: ImgixSourceType.WebFolder,
-
-        // These are some default imgix parameters to set for each image. It is
-        // recommended to have at least this minimal configuration.
-        defaultImgixParams: { auto: 'format,compress' },
-
-        // This configures which nodes to modify.
-        fields: [
-          {
-            nodeType: "ContentfulAsset",
-            fieldName: "imgixImage",
-            rawURLKey: 'file.url',
-            URLPrefix: 'https:',
-          },
-        ],
-      },
-    },
     "gatsby-plugin-vanilla-extract",
     {
       resolve: "gatsby-plugin-manifest",
