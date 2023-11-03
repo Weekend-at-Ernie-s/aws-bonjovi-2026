@@ -20,6 +20,42 @@ export default function Homepage(props) {
   const aboveAlbumContents = contents.filter((c) => c.contentPlacement === 'above')
   const belowAlbumContents = contents.filter((c) => c.contentPlacement === 'below')
 
+  const AWS_LOCALSTORAGE_KEY = 'aws_thetown';
+  const AWS_PASSWORD = 'thetown23';
+  const [password, setPassword] = React.useState('');
+  const onSubmit = event => {
+    event.preventDefault();
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(AWS_LOCALSTORAGE_KEY, password)
+      window.location.reload();
+    }
+  };
+
+  let passwordCorrect = false;
+  if (typeof window !== 'undefined') {
+    passwordCorrect = localStorage.getItem(AWS_LOCALSTORAGE_KEY) === AWS_PASSWORD
+  }
+  if (!passwordCorrect) {
+    return (
+      <div className="w-full h-screen flex flex-col items-center justify-center" style={{ background: '#FAFAFA' }}>
+        <h1 className="text-squid-ink text-xl">Welcome</h1>
+        <h4 className="text-squid-ink text-xl">Enter Password</h4>
+        <form className="flex flex-col py-12" onSubmit={onSubmit} style={{ width: '320px' }}>
+          <input
+            name="password"
+            type="password"
+            className="rounded-sm p-4 h-3 mb-4 border border-squid-ink"
+            value={password}
+            onChange={event => setPassword(event.target.value)}
+          />
+          <button className="bg-squid-ink rounded-sm text-white h-8 text-base" type="submit">
+          Enter
+          </button>
+        </form>
+      </div>
+    )
+  }
+
   return (
       <div>
         <Header />
