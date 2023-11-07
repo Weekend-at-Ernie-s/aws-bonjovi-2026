@@ -1,13 +1,12 @@
 import React from "react"
-import backgroundImage from '../assets/bkg-hero.jpg'
-import logoImage from '../assets/logo-aws.svg'
+import logoImage from '../assets/logo-aws-white.svg'
+import coldplayImage from '../assets/coldplay-tokyo-lockup.svg'
 
 export default function Header() {
   return (
-    <div className="h-96 md:h-166.5 lg:h-225 bg-bottom bg-cover xl:bg-static-wide  flex flex-col items-center xl:bg-antique-white xl:bg-repeat-y" style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <div><img className="mt-6 mb-10 w-28 md:w-40 lg:w-52 xl:w-56" src={logoImage} alt="AWS logo" /></div>
-      <div className="text-squid-ink font-light text-4xl md:text-7xl lg:text-8xl leading-none text-center">DIVIRTA-SE NA</div>
-      <div className="text-squid-ink font-light text-4xl md:text-7xl lg:text-8xl leading-none text-center">CIDADE DA MÚSICA</div>
+    <div className="flex flex-col items-center" style={{ background: "linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.83) 17.46%, rgba(0, 0, 0, 0.80) 35.23%, rgba(0, 0, 0, 0.66) 52.89%, rgba(0, 0, 0, 0.33) 70.17%, rgba(0, 0, 0, 0.00) 86.62%), #25367C" }}>
+      <div><img className="mt-6 mb-10 pt-12 w-28 md:w-40 lg:w-52 xl:w-56" src={logoImage} alt="AWS logo" /></div>
+      <div><img className="px-14 md:px-24 lg:px-32 my-20 md:my-24 lg:my-28" src={coldplayImage} alt="Coldplay displayed in rainbow-colored letters" /></div>
     </div>
   )
 }

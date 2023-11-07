@@ -1,2 +1,2 @@
-AWS @ The Town
+AWS Coldplay Music of the Spheres: Tokyo
 @lbkinson

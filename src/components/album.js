@@ -1,6 +1,6 @@
 import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { ImgixGatsbyImage, getGatsbyImageData } from '@imgix/gatsby';
+import { GatsbyImage } from "gatsby-plugin-image"
+import { getGatsbyImageData } from '@imgix/gatsby';
 import { saveAs } from 'file-saver'
 import downloadButton from '../assets/download-button.svg'
 // Import Swiper React components
@@ -57,11 +57,11 @@ export default function Album({photos}) {
       >
         {photos.map((photo) => (
           <SwiperSlide key={photo.id} className="">
-            <GatsbyImage 
-              className="h-full rounded-lg" 
-              imgStyle={{ borderRadius: '8px' }} 
-              objectFit="cover" 
-              alt={photo.description || photo.filename || ''} 
+            <GatsbyImage
+              className="h-full rounded-lg"
+              imgStyle={{ borderRadius: '8px' }}
+              objectFit="cover"
+              alt={photo.description || photo.filename || ''}
               loading="eager"
               image={getGatsbyImageData({
                 src: imgixUrl(photo),

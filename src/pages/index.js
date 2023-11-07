@@ -23,6 +23,7 @@ export default function Homepage(props) {
   return (
       <div>
         <Header />
+        <div className="h-10 md:h-16 lg:h-20" style={{ background: "linear-gradient(90deg,rgba(255, 0, 0, 1) 0%,rgba(255, 154, 0, 1) 10%,rgba(208, 222, 33, 1) 20%,rgba(79, 220, 74, 1) 30%,rgba(63, 218, 216, 1) 40%,rgba(47, 201, 226, 1) 50%,rgba(28, 127, 238, 1) 60%,rgba(95, 21, 242, 1) 70%,rgba(186, 12, 248, 1) 80%,rgba(251, 7, 217, 1) 90%,rgba(255, 0, 0, 1) 100%)" }} />
 
         <Content content={aboveAlbumContents} />
 
@@ -53,7 +54,7 @@ export default function Homepage(props) {
 
                 {day.albums?.map((album) => (
                   <div key={album.id} className={`${visibleAlbum === album.id ? 'block' : 'hidden'} max-w-sm md:max-w-3xl lg:max-w-6xl xl:max-w-8xl m-auto pb-6 md:pb-18`}>
-                    {album.albumDescription?.albumDescription && (<div className="text-abajo pb-12 leading-snug text-center">{album?.albumDescription?.albumDescription}</div>)}
+                    {album.albumDescription?.albumDescription && (<div className="text-springwood-dark pb-12 leading-snug text-center">{album?.albumDescription?.albumDescription}</div>)}
                     {album.photos && (<Album photos={album.photos} />)}
                   </div>
                 ))}
@@ -74,7 +75,7 @@ export const Head = (props) => {
 }
 export const query = graphql`
   {
-    allContentfulEvent(filter: {contentful_id: {eq: "6b0uZDsjzX4Rpq1ZTGCtIu"}}) {
+    allContentfulEvent(filter: {contentful_id: {eq: "2XmU4F4LpfcoSy4nPQSE5R"}}) {
       nodes {
         contentful_id
         eventName
