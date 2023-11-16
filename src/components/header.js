@@ -1,6 +1,6 @@
 import React from "react"
 import logoImage from '../assets/logo-aws-white.svg'
-import coldplayImage from '../assets/coldplay-tokyo-lockup.svg'
+import coldplayImage from '../assets/coldplay-perth-lockup.svg'
 
 export default function Header() {
   return (

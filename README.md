@@ -1,2 +1,2 @@
-AWS Coldplay Music of the Spheres: Tokyo
+AWS Coldplay Music of the Spheres: Perth
 @lbkinson

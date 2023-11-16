@@ -19,8 +19,6 @@ import { FreeMode, Navigation, Thumbs } from "swiper";
 
 export default function Album({photos}) {
   const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
-  console.log("photos");
-  console.log(photos);
 
   const imgixUrl = (photo) => {
     var url = photo.url;
