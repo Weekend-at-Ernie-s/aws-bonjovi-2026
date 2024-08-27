@@ -1,17 +1,21 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import lightBackgroundImage from '../assets/bkg-hero.jpeg'
 
 export default function Content({ content }) {
   if (!content) return null;
 
+// // style={{background: "linear-gradient(0deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%)"}}
   return (
     <>
       {content?.map((item) => {
+        const lightTheme = item.backgroundColor === 'light';
         return (
-          <div key={item.id} className={`flex flex-col items-center bg-springwood-dark`}>
+          <div key={item.id} className={`flex flex-col items-center ${lightTheme ? 'bg-bottom bg-cover': 'bg-vintage'}`} style={{ backgroundImage: lightTheme ? `url(${lightBackgroundImage})` : null }}>
+            <div className="w-full flex justify-center" style={{ background: lightTheme ? "linear-gradient(0deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%)" : null }}>
             <div className="flex flex-col items-center px-6 py-8 md:py-18 max-w-8xl w-11/12">
-              <div className={`leading-none text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-white`} >{item.heading?.heading}</div>
-              <div className={`leading-snug text-center text-base ${(item.photos || item.youTubeUrl) && 'pb-6'} text-stonehouse-light`} >{item.description?.description}</div>
+              <div className={`leading-none text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light ${lightTheme ? 'text-squid-ink' : 'text-white'}`} >{item.heading?.heading}</div>
+              <div className={`leading-snug text-center text-base ${(item.photos || item.youTubeUrl) && 'pb-6'} ${lightTheme ? 'text-pueblo' : 'text-stonehouse'}`} >{item.description?.description}</div>
 
               {item.photos && (
                 <div className="flex flex-col md:flex-row">
@@ -33,6 +37,7 @@ export default function Content({ content }) {
                   allowfullscreen>
                 </iframe>
               )}
+            </div>
             </div>
           </div>
         )
