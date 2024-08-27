@@ -9,9 +9,9 @@ const { ImgixSourceType } = require('@imgix/gatsby');
 module.exports = {
   siteMetadata: {
     siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
-    title: "AWS Coldplay Music of the Spheres: Perth",
+    title: "AWS Rock in Rio",
     author: `lbkinson`,
-    description: "Web page for AWS Coldplay Music of the Spheres: Perth",
+    description: "Web page for AWS Rock in Rio",
   },
   plugins: [
     {
