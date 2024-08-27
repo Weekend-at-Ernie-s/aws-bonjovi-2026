@@ -1,6 +1,6 @@
 import * as React from "react"
-import facebookImage from '../assets/open-graph-logo-1200x1200.jpg'
-import twitterImage from '../assets/twitter-card-logo-1024x512.jpg'
+import facebookImage from '../assets/open-graph-logo-1200x1200.png'
+import twitterImage from '../assets/twitter-card-logo-1024x512.png'
 import safariImage from '../assets/safari-pinned-tab.svg'
 
 export default function Head() {
