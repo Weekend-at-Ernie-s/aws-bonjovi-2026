@@ -33,7 +33,6 @@
     "gatsby-source-contentful": "^8.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
     "is-absolute-url": "^4.0.1",
-    "lightgallery": "^2.7.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-feather": "^2.0.9",
