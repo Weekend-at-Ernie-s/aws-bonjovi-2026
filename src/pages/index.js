@@ -27,7 +27,7 @@ export default function Homepage(props) {
         <Content content={aboveAlbumContents} />
 
         {orderedGalleries.length ? (
-          <div className="bg-swiper-gray flex flex-col items-center xs:w-screen">
+          <div className="bg-photo-gray flex flex-col items-center xs:w-screen">
             <div className="text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-squid-ink pt-6 md:pt-18 leading-none" >{orderedGalleries?.[0]?.galleryName}</div>
             {orderedGalleries?.map((day) => (
               <div key={day.id} className='block w-full'>
@@ -52,7 +52,7 @@ export default function Homepage(props) {
               )}
 
                 {day.albums?.map((album) => (
-                  <div key={album.id} className={`${visibleAlbum === album.id ? 'block' : 'hidden'} max-w-sm md:max-w-3xl lg:max-w-6xl xl:max-w-8xl m-auto pb-6 md:pb-18`}>
+                  <div key={album.id} className={`${visibleAlbum === album.id ? 'block' : 'hidden'} mx-6 md:mx-36 m-auto pb-6 md:pb-18`}>
                     {album.albumDescription?.albumDescription && (<div className="text-springwood-dark pb-12 leading-snug text-center">{album?.albumDescription?.albumDescription}</div>)}
                     {album.photos && (<Album photos={album.photos} />)}
                   </div>

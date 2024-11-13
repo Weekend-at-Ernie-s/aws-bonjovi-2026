@@ -11,11 +11,11 @@ export default function Content({ content }) {
       {content?.map((item) => {
         const lightTheme = item.backgroundColor === 'light';
         return (
-          <div key={item.id} className={`flex flex-col items-center ${lightTheme ? 'bg-bottom bg-cover': 'bg-vintage'}`} style={{ backgroundImage: lightTheme ? `url(${lightBackgroundImage})` : null }}>
-            <div className="w-full flex justify-center" style={{ background: lightTheme ? "linear-gradient(0deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%)" : null }}>
+          <div key={item.id} className={`flex flex-col items-center ${lightTheme ? 'bg-pearl-jam-orange': 'bg-black'}`}>
+            <div className="w-full flex justify-center">
             <div className="flex flex-col items-center px-6 py-8 md:py-18 max-w-8xl w-11/12">
-              <div className={`leading-none text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light ${lightTheme ? 'text-squid-ink' : 'text-white'}`} >{item.heading?.heading}</div>
-              <div className={`leading-snug text-center text-base ${(item.photos || item.youTubeUrl) && 'pb-6'} ${lightTheme ? 'text-pueblo' : 'text-stonehouse'}`} >{item.description?.description}</div>
+              <div className={`leading-none text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light ${lightTheme ? 'text-pearl-jam-purple' : 'text-white'}`} >{item.heading?.heading}</div>
+              <div className={`leading-snug text-center text-base ${(item.photos || item.youTubeUrl) && 'pb-6'} ${lightTheme ? 'text-pearl-jam-blue' : 'text-pearl-jam-yellow'}`} >{item.description?.description}</div>
 
               {item.photos && (
                 <div className="flex flex-col md:flex-row">

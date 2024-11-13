@@ -1,24 +1,38 @@
-import React from "react";
+import React from 'react';
 import { GatsbyImage } from "gatsby-plugin-image"
 import { getGatsbyImageData } from '@imgix/gatsby';
 import { saveAs } from 'file-saver'
 import downloadButton from '../assets/download-button.svg'
+import closeButton from '../assets/close-button.png'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/free-mode";
+// import "swiper/css/free-mode";
 import "swiper/css/navigation";
-import "swiper/css/thumbs";
+// import "swiper/css/thumbs";
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
 
 import "../styles/swiper.css";
 
 // import required Swiper modules
-import { FreeMode, Navigation, Thumbs } from "swiper";
+import { FreeMode, Thumbs } from "swiper";
+import { Grid, Pagination, Navigation } from 'swiper/modules';
+
+// import LightGallery react components
+import LightGallery from 'lightgallery/react';
+
+// import LightGallery styles
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lg-thumbnail.css';
+
 
 export default function Album({photos}) {
-  const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
+  // const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
+  const [lightboxedImage, setLightboxedImage] = React.useState(null);
 
   const imgixUrl = (photo) => {
     var url = photo.url;
@@ -34,6 +48,13 @@ export default function Album({photos}) {
     }
   }
 
+  const lightboxImage = (photo) => {
+    console.log(photo)
+    photoView();
+
+    setLightboxedImage(photo);
+  }
+
   const downloadImage = (photo) => {
     saveAs(photo.url, photo.filename)
     if (typeof window !== 'undefined' && window.gtag) {
@@ -42,21 +63,53 @@ export default function Album({photos}) {
   }
 
   return (
-    <div className="">
+    <div>
+    <div className="album h-96 md:h-174">
       <Swiper
         loop={true}
+        slidesPerView={6}
+        slidesPerGroup={6}
+        breakpoints={{
+          425: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            grid: {
+              rows: 3,
+              fill: "row",
+            }
+          },
+          650: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            grid: {
+              rows: 4,
+              fill: "row",
+            }
+          },
+          1440: {
+            slidesPerView: 6,
+            slidesPerGroup: 6,
+            grid: {
+              rows: 4,
+              fill: "row",
+            }
+          }
+        }}
+        grid={{
+          rows: 4,
+          fill: "row",
+        }}
         spaceBetween={10}
         navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2 bg-photo-gray rounded-lg h-44 md:h-96 lg:h-148 xl:h-174"
+        modules={[Grid, Navigation, Pagination]}
+        className="mySwiper"
         style={{ marginBottom: '28px' }}
         onSlideChange={photoView}
       >
         {photos.map((photo) => (
-          <SwiperSlide key={photo.id} className="">
+          <SwiperSlide key={photo.id} onClick={() => {lightboxImage(photo)}}>
             <GatsbyImage
-              className="h-full rounded-lg"
+              className="h-full"
               imgStyle={{ borderRadius: '8px' }}
               objectFit="cover"
               alt={photo.description || photo.filename || ''}
@@ -75,37 +128,75 @@ export default function Album({photos}) {
                 breakpoints: [750, 1080, 1200]
               })}
             />
-            <button onClick={() => {downloadImage(photo)}} className="absolute top-3 right-3 md:top-7 md:right-11 bg-white opacity-50 rounded-md p-1 z-50"><img alt="download button" className="h-5 w-5 text-squid-ink-50 fill-current" src={downloadButton} /></button>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <Swiper
-        loop={true}
-        onSwiper={setThumbsSwiper}
-        spaceBetween={12}
-        slidesPerView={7}
-        navigation={true}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper h-10 md:h-16 lg:h-22 w-full"
-      >
-        {photos.map((photo) => (
-          <SwiperSlide className="">
-            <GatsbyImage className="h-full rounded-lg" alt={photo.description || photo.filename || ''} loading="eager" image={getGatsbyImageData({
-                src: imgixUrl(photo),
-                imgixParams: {
-                  auto: 'compress,format'
-                },
-                layout: 'constrained',
-                width:120,//photo.file.details.image.width,
-                height:(120/photo.file.details.image.width) * photo.file.details.image.height, //hack to trick gatsby into not loading giant images,
-                outputPixelDensities: [1],
-                breakpoints: [50, 100]
-              })} />
+            <button onClick={() => {downloadImage(photo)}} className="download-button absolute top-1 right-1 bg-white opacity-50 rounded-md p-1 z-50">
+              <img alt="download button" className="h-4 w-4 text-squid-ink-50 fill-current" src={downloadButton} />
+            </button>
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
+      {lightboxedImage ? (
+        <div onClick={() => {lightboxImage(null)}} className="lightbox flex h-full w-full top-0 left-0 fixed z-10">
+          <div className="relative w-11/12 md:w-4/5 items-center justify-center m-auto">
+            <button onClick={() => {downloadImage(lightboxedImage)}} className="absolute top-2 right-2 mr-18 bg-white opacity-50 rounded-md p-1 z-50">
+              <img alt="download button" className="h-6 w-6 text-squid-ink-50 fill-current" src={downloadButton} />
+            </button>
+            <button onClick={() => {lightboxImage(null)}} className="absolute top-2 right-2 mr-8 bg-white opacity-50 rounded-md p-1 z-50">
+              <img alt="close button" className="h-6 w-6 text-squid-ink-50 fill-current" src={closeButton} />
+            </button>
+            <GatsbyImage
+              className="h-full"
+              imgStyle={{ borderRadius: '8px' }}
+              objectFit="cover"
+              alt={lightboxedImage.description || lightboxedImage.filename || ''}
+              loading="eager"
+              image={getGatsbyImageData({
+                src: imgixUrl(lightboxedImage),
+                imgixParams: {
+                  auto: 'compress,format',
+                  fit: "fillmax",
+                 fill: "blur",
+                },
+                layout: 'constrained',
+                width:1400, //fill out the whole slider in the aspect ratio that it is on smaller screens
+                // height:642,
+                aspectRatio: 16/9,
+                outputPixelDensities: [1],
+              })}
+            />
+          </div>
+        </div>
+      ) : null}
+    </div>
   );
 }
+
+
+//
+// <Swiper
+//   loop={true}
+//   onSwiper={setThumbsSwiper}
+//   spaceBetween={12}
+//   slidesPerView={7}
+//   navigation={true}
+//   freeMode={true}
+//   watchSlidesProgress={true}
+//   modules={[FreeMode, Navigation, Thumbs]}
+//   className="mySwiper h-10 md:h-16 lg:h-22 w-full"
+// >
+//   {photos.map((photo) => (
+//     <SwiperSlide className="">
+//       <GatsbyImage className="h-full rounded-lg" alt={photo.description || photo.filename || ''} loading="eager" image={getGatsbyImageData({
+//           src: imgixUrl(photo),
+//           imgixParams: {
+//             auto: 'compress,format'
+//           },
+//           layout: 'constrained',
+//           width:120,//photo.file.details.image.width,
+//           height:(120/photo.file.details.image.width) * photo.file.details.image.height, //hack to trick gatsby into not loading giant images,
+//           outputPixelDensities: [1],
+//           breakpoints: [50, 100]
+//         })} />
+//     </SwiperSlide>
+//   ))}
+// </Swiper>
