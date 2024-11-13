@@ -127,14 +127,14 @@ export default function Album({photos}) {
       {lightboxedImage ? (
         <div onClick={() => {lightboxImage(null)}} className="lightbox flex h-full w-full top-0 left-0 fixed z-10">
           <div className="relative w-11/12 md:w-4/5 items-center justify-center m-auto">
-            <button onClick={() => {downloadImage(lightboxedImage)}} className="absolute top-2 right-2 mr-18 bg-white opacity-50 rounded-md p-1 z-50">
+            <button onClick={() => {downloadImage(lightboxedImage)}} className="absolute top-2 right-2 mr-12 bg-white opacity-50 rounded-md p-1 z-50">
               <img alt="download button" className="h-6 w-6 text-squid-ink-50 fill-current" src={downloadButton} />
             </button>
-            <button onClick={() => {lightboxImage(null)}} className="absolute top-2 right-2 mr-8 bg-white opacity-50 rounded-md p-1 z-50">
+            <button onClick={() => {lightboxImage(null)}} className="absolute top-2 right-2 mr-2 bg-white opacity-50 rounded-md p-1 z-50">
               <img alt="close button" className="h-6 w-6 text-squid-ink-50 fill-current" src={closeButton} />
             </button>
             <GatsbyImage
-              className="h-full"
+              className="h-full w-full"
               imgStyle={{ borderRadius: '8px' }}
               objectFit="cover"
               alt={lightboxedImage.description || lightboxedImage.filename || ''}
@@ -144,7 +144,7 @@ export default function Album({photos}) {
                 imgixParams: {
                   auto: 'compress,format',
                   fit: "fillmax",
-                 fill: "blur",
+                  fill: "blur",
                 },
                 layout: 'constrained',
                 width:1400, //fill out the whole slider in the aspect ratio that it is on smaller screens
@@ -153,6 +153,9 @@ export default function Album({photos}) {
                 outputPixelDensities: [1],
               })}
             />
+            <div className="absolute top-0 flex items-center justify-center w-full h-full bg-black rounded-lg" style={{ zIndex: -1 }}>
+              <img className="h-10 md:h-20" src="https://cdn.pixabay.com/animation/2023/08/11/21/18/21-18-05-265_512.gif" alt="spinner" />
+            </div>
           </div>
         </div>
       ) : null}
