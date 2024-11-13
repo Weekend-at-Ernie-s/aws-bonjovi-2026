@@ -52,6 +52,9 @@ module.exports = {
         'contain': 'contain',
         'static-wide': '1800px',
       },
+      padding: {
+        '120': '30rem', // 480px
+      },
     },
     colors: {
       'squid-ink': '#0F102D',

@@ -4,31 +4,20 @@ import { getGatsbyImageData } from '@imgix/gatsby';
 import { saveAs } from 'file-saver'
 import downloadButton from '../assets/download-button.svg'
 import closeButton from '../assets/close-button.png'
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
+// import required Swiper modules
+import { Grid, Pagination, Navigation } from 'swiper/modules';
+
 // Import Swiper styles
 import "swiper/css";
-// import "swiper/css/free-mode";
 import "swiper/css/navigation";
-// import "swiper/css/thumbs";
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 
 import "../styles/swiper.css";
-
-// import required Swiper modules
-import { FreeMode, Thumbs } from "swiper";
-import { Grid, Pagination, Navigation } from 'swiper/modules';
-
-// import LightGallery react components
-import LightGallery from 'lightgallery/react';
-
-// import LightGallery styles
-import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-zoom.css';
-import 'lightgallery/css/lg-thumbnail.css';
-
 
 export default function Album({photos}) {
   // const [thumbsSwiper, setThumbsSwiper] = React.useState(null);
@@ -170,33 +159,3 @@ export default function Album({photos}) {
     </div>
   );
 }
-
-
-//
-// <Swiper
-//   loop={true}
-//   onSwiper={setThumbsSwiper}
-//   spaceBetween={12}
-//   slidesPerView={7}
-//   navigation={true}
-//   freeMode={true}
-//   watchSlidesProgress={true}
-//   modules={[FreeMode, Navigation, Thumbs]}
-//   className="mySwiper h-10 md:h-16 lg:h-22 w-full"
-// >
-//   {photos.map((photo) => (
-//     <SwiperSlide className="">
-//       <GatsbyImage className="h-full rounded-lg" alt={photo.description || photo.filename || ''} loading="eager" image={getGatsbyImageData({
-//           src: imgixUrl(photo),
-//           imgixParams: {
-//             auto: 'compress,format'
-//           },
-//           layout: 'constrained',
-//           width:120,//photo.file.details.image.width,
-//           height:(120/photo.file.details.image.width) * photo.file.details.image.height, //hack to trick gatsby into not loading giant images,
-//           outputPixelDensities: [1],
-//           breakpoints: [50, 100]
-//         })} />
-//     </SwiperSlide>
-//   ))}
-// </Swiper>

@@ -1,11 +1,9 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import lightBackgroundImage from '../assets/bkg-hero.jpeg'
 
 export default function Content({ content }) {
   if (!content) return null;
 
-// // style={{background: "linear-gradient(0deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%)"}}
   return (
     <>
       {content?.map((item) => {
