@@ -9,9 +9,9 @@ const { ImgixSourceType } = require('@imgix/gatsby');
 module.exports = {
   siteMetadata: {
     siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
-    title: "AWS Rock in Rio",
+    title: "AWS Pearl Jam Dark Matter World Tour 2024 Melbourne",
     author: `lbkinson`,
-    description: "Web page for AWS Rock in Rio",
+    description: "Web page for AWS Pearl Jam Dark Matter World Tour 2024 Melbourne",
   },
   plugins: [
     {

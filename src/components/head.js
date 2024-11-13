@@ -9,26 +9,26 @@ export default function Head() {
       <meta charSet="utf-8" />
 
       {/* Standard search meta */}
-      <title>AWS Rock in Rio</title>
-      <meta name="description" content="Web page for AWS Rock in Rio." />
+      <title>AWS Pearl Jam Melbourne</title>
+      <meta name="description" content="Web page for AWS Pearl Jam Dark Matter World Tour 2024 Melbourne." />
       <meta name="robots" content="noindex, noimageindex, nofollow" />
 
       {/* Facebook + Open Graph */}
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="AWS Rock in Rio" />
-      <meta property="og:description" content="Web page for the AWS Rock in Rio" />
-      <meta property="og:url" content="https://www.awsrockshere.com/RockinRio" />
+      <meta property="og:title" content="AWS Pearl Jam Dark Matter World Tour 2024 Melbourne" />
+      <meta property="og:description" content="Web page for the AWS Pearl Jam Dark Matter World Tour 2024 Melbourne" />
+      <meta property="og:url" content="https://www.awsrockshere.com/PearlJamMelbourne" />
       <meta property="og:image" content={facebookImage} />
-      <meta property="og:image:alt" content="White AWS logo on colorful cityscape background image with sunset." />
+      <meta property="og:image:alt" content="White AWS logo on black background image with light streaks." />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@AWS" />
-      <meta name="twitter:title" content="AWS Rock in Rio" />
-      <meta name="twitter:description" content="Web page for AWS Rock in Rio" />
+      <meta name="twitter:title" content="AWS Pearl Jam Dark Matter World Tour 2024 Melbourne" />
+      <meta name="twitter:description" content="Web page for AWS Pearl Jam Dark Matter World Tour 2024 Melbourne" />
       <meta name="twitter:image" content={twitterImage} />
-      <meta name="twitter:image:alt" content="White AWS logo on colorful cityscape background image with sunset." />
+      <meta name="twitter:image:alt" content="White AWS logo on black background image with light streaks." />
 
       {/* Favorite icons not addressed by gatsby-plugin-manifest */}
       <meta name="msapplication-TileColor" content="#232F3E" />
