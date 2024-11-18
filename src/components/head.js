@@ -9,24 +9,24 @@ export default function Head() {
       <meta charSet="utf-8" />
 
       {/* Standard search meta */}
-      <title>AWS Pearl Jam Melbourne</title>
-      <meta name="description" content="Web page for AWS Pearl Jam Dark Matter World Tour 2024 Melbourne." />
+      <title>AWS Pearl Jam Sydney</title>
+      <meta name="description" content="Web page for AWS Pearl Jam Dark Matter World Tour 2024 Sydney." />
       <meta name="robots" content="noindex, noimageindex, nofollow" />
 
       {/* Facebook + Open Graph */}
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="AWS Pearl Jam Dark Matter World Tour 2024 Melbourne" />
-      <meta property="og:description" content="Web page for the AWS Pearl Jam Dark Matter World Tour 2024 Melbourne" />
-      <meta property="og:url" content="https://www.awsrockshere.com/PearlJamMelbourne" />
+      <meta property="og:title" content="AWS Pearl Jam Dark Matter World Tour 2024 Sydney" />
+      <meta property="og:description" content="Web page for the AWS Pearl Jam Dark Matter World Tour 2024 Sydney" />
+      <meta property="og:url" content="https://www.awsrockshere.com/PearlJamSydney" />
       <meta property="og:image" content={facebookImage} />
       <meta property="og:image:alt" content="White AWS logo on black background image with light streaks." />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@AWS" />
-      <meta name="twitter:title" content="AWS Pearl Jam Dark Matter World Tour 2024 Melbourne" />
-      <meta name="twitter:description" content="Web page for AWS Pearl Jam Dark Matter World Tour 2024 Melbourne" />
+      <meta name="twitter:title" content="AWS Pearl Jam Dark Matter World Tour 2024 Sydney" />
+      <meta name="twitter:description" content="Web page for AWS Pearl Jam Dark Matter World Tour 2024 Sydney" />
       <meta name="twitter:image" content={twitterImage} />
       <meta name="twitter:image:alt" content="White AWS logo on black background image with light streaks." />
 
