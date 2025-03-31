@@ -23,6 +23,7 @@ export default function Homepage(props) {
   return (
       <div>
         <Header content={aboveAlbumContents} />
+        <div className="bg-white h-2 md:h-3 lg:h-4" />
 
         <Content content={aboveAlbumContents} />
 
@@ -74,7 +75,7 @@ export const Head = (props) => {
 }
 export const query = graphql`
   {
-    allContentfulEvent(filter: {contentful_id: {eq: "7Bk3fWaB5br2BdqLn9QCl5"}}) {
+    allContentfulEvent(filter: {contentful_id: {eq: "AIPo2e2rFvKm2kVJ5Vgtb"}}) {
       nodes {
         contentful_id
         eventName

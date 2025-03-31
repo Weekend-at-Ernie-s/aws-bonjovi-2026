@@ -78,6 +78,8 @@ module.exports = {
       'pearl-jam-purple': '#0F102D',
       'pearl-jam-blue': '#351D69',
       'pearl-jam-yellow': 'rgba(255, 153, 51)',
+      'coldplay-dark': 'rgba(15, 16, 45, 1)',
+      'coldplay-darkish': 'rgba(53, 29, 105, 1)',
     },
     fontFamily: {
       'body': 'Amazon Ember, Helvetica Neue, roboto, arial, sans-serif',

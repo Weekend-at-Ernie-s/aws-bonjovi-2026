@@ -9,9 +9,9 @@ const { ImgixSourceType } = require('@imgix/gatsby');
 module.exports = {
   siteMetadata: {
     siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
-    title: "AWS Pearl Jam Dark Matter World Tour 2024 Sydney",
+    title: "AWS Coldplay Music of the Spheres Tour 2025 Hong Kong",
     author: `lbkinson`,
-    description: "Web page for AWS Pearl Jam Dark Matter World Tour 2024 Sydney",
+    description: "Web page for AWS Coldplay Music of the Spheres Tour 2025 Hong Kong",
   },
   plugins: [
     {
