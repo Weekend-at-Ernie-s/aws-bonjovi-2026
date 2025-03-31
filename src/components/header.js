@@ -1,5 +1,5 @@
 import React from "react"
-import backgroundImage from '../assets/coldplay_stars_dark.png'
+import backgroundImage from '../assets/coldplay_stars_dark.jpg'
 import logoImage from '../assets/logo-aws-white.svg'
 import coldplayImage from '../assets/hero-lockup-no-symbols.png'
 
