@@ -1,7 +1,7 @@
 import React from "react"
 import backgroundImage from '../assets/coldplay_stars_dark.png'
 import logoImage from '../assets/logo-aws-white.svg'
-import coldplayImage from '../assets/hero-lockup.png'
+import coldplayImage from '../assets/hero-lockup-no-symbols.png'
 
 export default function Header() {
   return (

@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="pb-4">*Content is for internal AWS use and your personal enjoyment.</div>
         <div className="pb-4">By continuing past this page, you agree to our <a className="underline" href="https://aws.amazon.com/terms/" target="_blank" rel="noreferrer">Terms of Use.</a></div>
         <div className="flex flex-col md:flex-row items-center">
-          <div className="w-full pb-4 md:pb-0">©2023 Amazon Web Services, Inc. or its affiliates. All rights reserved.</div>
+          <div className="w-full pb-4 md:pb-0">©2025 Amazon Web Services, Inc. or its affiliates. All rights reserved.</div>
           <div className="flex justify-between w-1/3">
             <OutboundLink href="https://aws.amazon.com/privacy/" target="_blank" rel="noreferrer">Privacy</OutboundLink>
             <OutboundLink href="https://aws.amazon.com/legal/" target="_blank" rel="noreferrer">Legal</OutboundLink>
