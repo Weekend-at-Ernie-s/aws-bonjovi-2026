@@ -55,11 +55,8 @@ export default function Album({photos}) {
     <div>
     <div className="album h-96 md:h-174">
       <Swiper
-        loop={true}
-        slidesPerView={6}
-        slidesPerGroup={6}
         breakpoints={{
-          425: {
+          1: {
             slidesPerView: 2,
             slidesPerGroup: 2,
             grid: {
@@ -83,10 +80,6 @@ export default function Album({photos}) {
               fill: "row",
             }
           }
-        }}
-        grid={{
-          rows: 4,
-          fill: "row",
         }}
         spaceBetween={10}
         navigation={true}
