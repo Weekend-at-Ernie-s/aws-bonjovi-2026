@@ -9,24 +9,24 @@ export default function Head() {
       <meta charSet="utf-8" />
 
       {/* Standard search meta */}
-      <title>AWS Coldplay Stanford</title>
-      <meta name="description" content="Web page for AWS Coldplay Music of the Spheres Tour 2025 Stanford." />
+      <title>AWS Coldplay Toronto</title>
+      <meta name="description" content="Web page for AWS Coldplay Music of the Spheres Tour 2025 Toronto." />
       <meta name="robots" content="noindex, noimageindex, nofollow" />
 
       {/* Facebook + Open Graph */}
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="AWS Coldplay Music of the Spheres Tour 2025 Stanford" />
-      <meta property="og:description" content="Web page for the AWS Coldplay Music of the Spheres Tour 2025 Stanford" />
-      <meta property="og:url" content="https://AWSRocksHere.com/ColdplayStanford" />
+      <meta property="og:title" content="AWS Coldplay Music of the Spheres Tour 2025 Toronto" />
+      <meta property="og:description" content="Web page for the AWS Coldplay Music of the Spheres Tour 2025 Toronto" />
+      <meta property="og:url" content="https://AWSRocksHere.com/ColdplayToronto" />
       <meta property="og:image" content={facebookImage} />
       <meta property="og:image:alt" content="White AWS logo on blue background image with stars." />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@AWS" />
-      <meta name="twitter:title" content="AWS Coldplay Music of the Spheres Tour 2025 Stanford" />
-      <meta name="twitter:description" content="Web page for AWS Coldplay Music of the Spheres Tour 2025 Stanford" />
+      <meta name="twitter:title" content="AWS Coldplay Music of the Spheres Tour 2025 Toronto" />
+      <meta name="twitter:description" content="Web page for AWS Coldplay Music of the Spheres Tour 2025 Toronto" />
       <meta name="twitter:image" content={twitterImage} />
       <meta name="twitter:image:alt" content="White AWS logo on blue background image with stars." />
 
