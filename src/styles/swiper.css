@@ -24,9 +24,10 @@
 }
 
 .swiper-button-prev, .swiper-button-next {
-  background-color: white;
-  opacity: 0.75;
+  background-color: #ff9900;
   border-radius: 100%;
+  border-color: black;
+  border-width: 2px;
   width: 32px !important;
   height: 32px !important;
 }
@@ -35,11 +36,23 @@
   font-size: 18px !important;
   color: #232F3E;
 }
+.swiper-button-prev:after {
+  margin-right: 2px;
+}
+.swiper-button-next:after {
+  margin-left: 2px;
+}
 
 @media screen and (max-width: 1024px) {
   .swiper-button-prev, .swiper-button-next {
-    width: 24px !important;
-    height: 24px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .swiper-button-prev:after {
+    margin-right: 4px;
+  }
+  .swiper-button-next:after {
+    margin-left: 4px;
   }
 }
 
