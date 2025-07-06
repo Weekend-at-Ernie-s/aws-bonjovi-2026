@@ -75,7 +75,7 @@ export const Head = (props) => {
 }
 export const query = graphql`
   {
-    allContentfulEvent(filter: {contentful_id: {eq: "5c1M38ZubtCYclFiCgHrVX"}}) {
+    allContentfulEvent(filter: {contentful_id: {eq: "6sRjkRTnC3SEUyZWy3ipZb"}}) {
       nodes {
         contentful_id
         eventName
