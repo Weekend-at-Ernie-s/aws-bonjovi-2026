@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import lightBackgroundImage from '../assets/coldplay_stars_light.png'
+import lightBackgroundImage from '../assets/image_5.png'
 
 export default function Content({ content }) {
   if (!content) return null;
@@ -10,11 +10,10 @@ export default function Content({ content }) {
       {content?.map((item) => {
         const lightTheme = item.backgroundColor === 'light';
         return (
-          <div key={item.id} className={`flex flex-col items-center ${lightTheme ? 'bg-bottom bg-cover': 'bg-black'}`} style={{ backgroundImage: lightTheme ? `url(${lightBackgroundImage})` : null }}>
-            <div className="w-full flex justify-center">
-            <div className="flex flex-col items-center px-6 py-8 md:py-18 max-w-8xl w-11/12">
-              <div className={`leading-none text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light ${lightTheme ? 'text-coldplay-dark' : 'text-white'}`}>{item.heading?.heading}</div>
-              <div className={`leading-snug text-center text-base ${(item.photos || item.youTubeUrl) && 'pb-6'} ${lightTheme ? 'text-coldplay-darkish' : 'text-white'}`}>{item.description?.description}</div>
+          <div key={item.id} className={`flex flex-col items-center ${lightTheme ? 'bg-bottom bg-cover bg-town-orange': 'bg-squid-ink'}`} style={{ backgroundImage: lightTheme ? `url(${lightBackgroundImage})` : null, backgroundBlendMode: lightTheme ? 'screen' : null }}>
+            <div className="flex flex-col items-center px-6 py-8 md:py-32 max-w-8xl w-11/12">
+              <div className='leading-none text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-squid-ink'>{item.heading?.heading}</div>
+              <div className={`leading-snug text-center text-base text-squid-ink ${(item.photos || item.youTubeUrl) && 'pb-6'}`} >{item.description?.description}</div>
 
               {item.photos && (
                 <div className="flex flex-col md:flex-row">
@@ -36,7 +35,6 @@ export default function Content({ content }) {
                   allowfullscreen>
                 </iframe>
               )}
-            </div>
             </div>
           </div>
         )

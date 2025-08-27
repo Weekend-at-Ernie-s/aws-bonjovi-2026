@@ -1,2 +1,2 @@
-AWS Coldplay Music of the Spheres Tour 2025 Boston
+AWS The Town 2025
 @lbkinson

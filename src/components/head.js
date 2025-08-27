@@ -9,24 +9,24 @@ export default function Head() {
       <meta charSet="utf-8" />
 
       {/* Standard search meta */}
-      <title>AWS Coldplay Boston</title>
-      <meta name="description" content="Web page for AWS Coldplay Music of the Spheres Tour 2025 Boston." />
+      <title>AWS The Town 2025</title>
+      <meta name="description" content="Web page for AWS The Town 2025." />
       <meta name="robots" content="noindex, noimageindex, nofollow" />
 
       {/* Facebook + Open Graph */}
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="AWS Coldplay Music of the Spheres Tour 2025 Boston" />
-      <meta property="og:description" content="Web page for the AWS Coldplay Music of the Spheres Tour 2025 Boston" />
-      <meta property="og:url" content="https://AWSRocksHere.com/ColdplayBoston" />
+      <meta property="og:title" content="AWS The Town 2025" />
+      <meta property="og:description" content="Web page for the AWS The Town 2025" />
+      <meta property="og:url" content="https://AWSRocksHere.com/TheTown25" />
       <meta property="og:image" content={facebookImage} />
       <meta property="og:image:alt" content="White AWS logo on blue background image with stars." />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@AWS" />
-      <meta name="twitter:title" content="AWS Coldplay Music of the Spheres Tour 2025 Boston" />
-      <meta name="twitter:description" content="Web page for AWS Coldplay Music of the Spheres Tour 2025 Boston" />
+      <meta name="twitter:title" content="AWS The Town 2025" />
+      <meta name="twitter:description" content="Web page for AWS The Town 2025" />
       <meta name="twitter:image" content={twitterImage} />
       <meta name="twitter:image:alt" content="White AWS logo on blue background image with stars." />
 
