@@ -10,7 +10,7 @@ export default function Content({ content }) {
       {content?.map((item) => {
         const lightTheme = item.backgroundColor === 'light';
         return (
-          <div key={item.id} className={`flex flex-col items-center ${lightTheme ? 'bg-bottom bg-cover bg-town-orange': 'bg-squid-ink'}`} style={{ backgroundImage: lightTheme ? `url(${lightBackgroundImage})` : null, backgroundBlendMode: lightTheme ? 'screen' : null }}>
+          <div key={item.id} className={`flex flex-col items-center ${lightTheme ? 'bg-bottom bg-cover bg-town-orange': 'bg-town-orange'}`} style={{ backgroundImage: lightTheme ? `url(${lightBackgroundImage})` : null, backgroundBlendMode: lightTheme ? 'screen' : null }}>
             <div className="flex flex-col items-center px-6 py-8 md:py-32 max-w-8xl w-11/12">
               <div className='leading-none text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-squid-ink'>{item.heading?.heading}</div>
               <div className={`leading-snug text-center text-base text-squid-ink ${(item.photos || item.youTubeUrl) && 'pb-6'}`} >{item.description?.description}</div>
