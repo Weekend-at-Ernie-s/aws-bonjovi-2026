@@ -1,5 +1,5 @@
 import React from "react"
-import backgroundImage from '../assets/the-town-line-up-1.png'
+import backgroundImage from '../assets/the-town-line-up-2.png'
 import logoImage from '../assets/logo-aws-white.svg'
 
 export default function Header() {
