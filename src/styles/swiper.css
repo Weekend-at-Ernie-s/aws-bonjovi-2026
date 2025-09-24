@@ -24,40 +24,32 @@
 }
 
 .swiper-button-prev, .swiper-button-next {
-  background-color: #ff9900;
+  background-color: #F6A20D;
   border-radius: 100%;
   border-color: black;
   border-width: 2px;
-  width: 32px !important;
-  height: 32px !important;
+  width: 48px !important;
+  height: 48px !important;
 }
 
 .swiper-button-prev:after, .swiper-button-next:after {
-  font-size: 18px !important;
+  font-size: 24px !important;
   color: #232F3E;
 }
 .swiper-button-prev:after {
-  margin-right: 2px;
+  margin-right: 4px;
 }
 .swiper-button-next:after {
-  margin-left: 2px;
+  margin-left: 4px;
 }
 
 @media screen and (max-width: 1024px) {
-  .swiper-button-prev, .swiper-button-next {
-    width: 30px !important;
-    height: 30px !important;
-  }
   .swiper-button-prev:after {
     margin-right: 4px;
   }
   .swiper-button-next:after {
     margin-left: 4px;
   }
-}
-
-.lightbox {
-
 }
 
 .lightbox:before {

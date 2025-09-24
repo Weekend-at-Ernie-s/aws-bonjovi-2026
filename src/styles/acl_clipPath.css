@@ -1,0 +1,28 @@
+.acl_clipPathTop {
+  width: 100%;
+  aspect-ratio: 1;
+  clip-path: polygon(0 0,100% 0,0 100%);
+}
+.acl_clipPathBottom {
+  width: 100%;
+  aspect-ratio: 1;
+  clip-path: polygon(0 100%,100% 0,100% 100%);
+}
+
+@media screen and (max-width: 650px) {
+  .acl_clipPathTop {
+    clip-path: polygon(0 0,100% 0,0 50%);
+  }
+  .acl_clipPathBottom {
+    clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .acl_clipPathTop {
+    clip-path: polygon(0 0,100% 0,0 40%);
+  }
+  .acl_clipPathBottom {
+    clip-path: polygon(100% 60%, 0% 100%, 100% 100%);
+  }
+}
