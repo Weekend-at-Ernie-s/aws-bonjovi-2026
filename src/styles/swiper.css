@@ -24,17 +24,18 @@
 }
 
 .swiper-button-prev, .swiper-button-next {
-  background-color: #F6A20D;
+  background-color: #DF6029;
+  opacity: 90%;
   border-radius: 100%;
-  border-color: black;
+  border-color: #DF6029;
   border-width: 2px;
   width: 48px !important;
   height: 48px !important;
 }
 
 .swiper-button-prev:after, .swiper-button-next:after {
-  font-size: 24px !important;
-  color: #232F3E;
+  font-size: 28px !important;
+  color: #F3D192;
 }
 .swiper-button-prev:after {
   margin-right: 4px;
