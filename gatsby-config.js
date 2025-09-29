@@ -9,9 +9,9 @@ const { ImgixSourceType } = require('@imgix/gatsby');
 module.exports = {
   siteMetadata: {
     siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
-    title: "AWS The Town 2025",
+    title: "AWS ACL 2025",
     author: `lbkinson`,
-    description: "Web page for AWS The Town 2025",
+    description: "Web page for AWS ACL 2025",
   },
   plugins: [
     {

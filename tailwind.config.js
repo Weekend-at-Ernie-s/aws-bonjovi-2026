@@ -83,7 +83,7 @@ module.exports = {
       'town-orange': 'rgba(255, 153, 51, 1)',
       'acl-pink': '#EAC1D7',
       'acl-dark-pink': '#F03250',
-      'acl-red': '#DD3C49',
+      'acl-red': '#e682b5',
     },
     fontFamily: {
       'body': 'Amazon Ember, Helvetica Neue, roboto, arial, sans-serif',
