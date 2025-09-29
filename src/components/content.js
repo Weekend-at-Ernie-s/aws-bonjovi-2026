@@ -13,8 +13,8 @@ export default function Content({ content }) {
           <div key={item.id} className={`flex flex-col items-center ${lightTheme ? 'bg-acl-dark-pink': 'bg-acl-dark-pink'}`}>
             <div className="w-full h-8 my-10 bg-center bg-repeat-x" style={{ backgroundSize: 'contain', backgroundImage: lightTheme ? `url(${border})` : null}} />
             <div className="flex flex-col items-center px-6 py-8 md:py-16 max-w-8xl w-11/12">
-              <div className='leading-none text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-acl-red drop-shadow-md'>{item.heading?.heading}</div>
-              <div className={`leading-snug text-center text-base text-acl-red drop-shadow-md ${(item.photos || item.youTubeUrl) && 'pb-6'}`} >{item.description?.description}</div>
+              <div className='leading-none text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-black drop-shadow-md'>{item.heading?.heading}</div>
+              <div className={`leading-snug text-center text-base text-black drop-shadow-md ${(item.photos || item.youTubeUrl) && 'pb-6'}`} >{item.description?.description}</div>
 
               {item.photos && (
                 <div className="flex flex-col md:flex-row">
