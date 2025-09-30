@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import border from '../assets/border.png'
+import border from '../assets/border.svg'
 
 export default function Content({ content }) {
   if (!content) return null;
