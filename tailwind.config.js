@@ -57,7 +57,7 @@ module.exports = {
       },
     },
     colors: {
-      'squid-ink': '#0F102D',
+      'squid-ink': '#161D26',
       'squid-ink-50': 'rgba(35, 47, 62, 0.5)', // todo
       'stonehouse': 'rgba(240, 235, 212, 1)',
       'stonehouse-light': '#d9a9d5',

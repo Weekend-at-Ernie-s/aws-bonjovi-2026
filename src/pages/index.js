@@ -7,12 +7,12 @@ import SEOHead from "../components/head"
 import Header from "../components/header"
 
 export default function Homepage(props) {
-  const { allContentfulEvent: { nodes: events } } = props.data
-  let galleries = []
-  let contents = []
-  events[0].content.map((c) => c.albums ? galleries.push(c) : contents.push(c))
+  const { allContentfulEvent: { nodes: events } } = props.data;
+  let galleries = [];
+  let contents = [];
+  events[0].content.map((c) => c.albums ? galleries.push(c) : contents.push(c));
 
-  const orderedGalleries = galleries?.sort((a, b) => a?.galleryName.localeCompare(b?.galleryName))
+  const orderedGalleries = galleries?.sort((a, b) => a?.galleryName.localeCompare(b?.galleryName));
 
   const [visibleAlbum, setIsVisibleAlbum] = React.useState(orderedGalleries?.[0]?.albums?.[0]?.id)
   const hasOneAlbum = orderedGalleries?.[0]?.albums?.length === 1;
@@ -74,7 +74,7 @@ export const Head = (props) => {
 }
 export const query = graphql`
   {
-    allContentfulEvent(filter: {contentful_id: {eq: "4Lty5qHajEItfQPFBIyESS"}}) {
+    allContentfulEvent(filter: {contentful_id: {eq: "1hlbYQ4QGAjNph9DlJsupr"}}) {
       nodes {
         contentful_id
         eventName

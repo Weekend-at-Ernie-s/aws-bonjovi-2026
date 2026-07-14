@@ -9,24 +9,24 @@ export default function Head() {
       <meta charSet="utf-8" />
 
       {/* Standard search meta */}
-      <title>AWS ACL 2025</title>
-      <meta name="description" content="Web page for AWS ACL 2025." />
+      <title>AWS Bon Jovi 2026</title>
+      <meta name="description" content="Web page for AWS Bon Jovi 2026." />
       <meta name="robots" content="noindex, noimageindex, nofollow" />
 
       {/* Facebook + Open Graph */}
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="AWS ACL 2025" />
-      <meta property="og:description" content="Web page for the AWS ACL 2025" />
-      <meta property="og:url" content="https://awsrockshere.com/ACL25" />
+      <meta property="og:title" content="AWS Bon Jovi 2026" />
+      <meta property="og:description" content="Web page for the AWS Bon Jovi 2026" />
+      <meta property="og:url" content="https://awsrockshere.com/BonJovi26" />
       <meta property="og:image" content={facebookImage} />
       <meta property="og:image:alt" content="White AWS logo on blue background image with stars." />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@AWS" />
-      <meta name="twitter:title" content="AWS ACL 2025" />
-      <meta name="twitter:description" content="Web page for AWS ACL 2025" />
+      <meta name="twitter:title" content="AWS Bon Jovi 2026" />
+      <meta name="twitter:description" content="Web page for AWS Bon Jovi 2026" />
       <meta name="twitter:image" content={twitterImage} />
       <meta name="twitter:image:alt" content="White AWS logo on blue background image with stars." />
 
