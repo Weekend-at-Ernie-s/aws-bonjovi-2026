@@ -12,6 +12,8 @@ export default function Homepage(props) {
   let contents = [];
   events[0].content.map((c) => c.albums ? galleries.push(c) : contents.push(c));
 
+  const eventName = events?.[0]?.eventName
+
   const orderedGalleries = galleries?.sort((a, b) => a?.galleryName.localeCompare(b?.galleryName));
 
   const [visibleAlbum, setIsVisibleAlbum] = React.useState(orderedGalleries?.[0]?.albums?.[0]?.id)
@@ -22,13 +24,13 @@ export default function Homepage(props) {
 
   return (
       <div>
-        <Header />
+        <Header eventName={eventName} />
 
         <Content content={aboveAlbumContents} />
 
         {orderedGalleries.length ? (
           <div className="bg-photo-gray flex flex-col items-center xs:w-screen">
-            <div className="text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-light text-squid-ink pt-6 md:pt-18 leading-none" >{orderedGalleries?.[0]?.galleryName}</div>
+            <div className="text-center text-3xl md:text-5xl lg:text-6xl pb-6 font-bold text-squid-ink pt-6 md:pt-18 leading-none" >{orderedGalleries?.[0]?.galleryName}</div>
             {orderedGalleries?.map((day) => (
               <div key={day.id} className='block w-full'>
               {!hasOneAlbum && (
